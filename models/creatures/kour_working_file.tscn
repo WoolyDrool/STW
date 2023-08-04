@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://csp181xx00bxe"]
+[gd_scene load_steps=2 format=3 uid="uid://s8f4rp35hvus"]
 
-[ext_resource type="PackedScene" uid="uid://cpgdejxjfhkpn" path="res://Models/KourWorkingFile.blend" id="1_b8dtu"]
+[ext_resource type="PackedScene" uid="uid://cpgdejxjfhkpn" path="res://models/creatures/KourWorkingFile.blend" id="1_b8dtu"]
 
 [node name="KourWorkingFile" instance=ExtResource("1_b8dtu")]
 
