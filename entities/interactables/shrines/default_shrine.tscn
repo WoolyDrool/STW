@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dha0ovhq7hhqa"]
+[gd_scene load_steps=6 format=3 uid="uid://dha0ovhq7hhqa"]
 
 [ext_resource type="Script" path="res://entities/interactables/shrines/shrine.gd" id="1_1uvvs"]
 [ext_resource type="PackedScene" uid="uid://pletdq3bfgxj" path="res://systems/interact.tscn" id="1_22h25"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rtxru"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_ihotv"]
 size = Vector3(1, 4, 1)
@@ -14,6 +16,7 @@ script = ExtResource("1_1uvvs")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+material_override = SubResource("StandardMaterial3D_rtxru")
 mesh = SubResource("PrismMesh_ihotv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
