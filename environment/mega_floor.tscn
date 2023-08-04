@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsc8oke8kg64n"]
+
+[ext_resource type="PackedScene" uid="uid://desbu5rojua8d" path="res://environment/debug_ground.tscn" id="1_lgytk"]
+
+[node name="MegaFloor" type="Node3D"]
+
+[node name="DebugGround" parent="." instance=ExtResource("1_lgytk")]
+layers = 2
+skeleton = NodePath("../..")
+
+[node name="DebugGround2" parent="." instance=ExtResource("1_lgytk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+layers = 2
+skeleton = NodePath("../..")
+
+[node name="DebugGround3" parent="." instance=ExtResource("1_lgytk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+layers = 2
+skeleton = NodePath("../..")
+
+[node name="DebugGround4" parent="." instance=ExtResource("1_lgytk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 16)
+layers = 2
+skeleton = NodePath("../..")
+
+[node name="DebugGround5" parent="." instance=ExtResource("1_lgytk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+layers = 2
+skeleton = NodePath("../..")
+
+[node name="DebugGround6" parent="." instance=ExtResource("1_lgytk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 16)
+layers = 2
+skeleton = NodePath("../..")
+
+[node name="DebugGround7" parent="." instance=ExtResource("1_lgytk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
+layers = 2
+skeleton = NodePath("../..")
+
+[node name="DebugGround8" parent="." instance=ExtResource("1_lgytk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -16)
+layers = 2
+skeleton = NodePath("../..")
+
+[node name="DebugGround9" parent="." instance=ExtResource("1_lgytk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+layers = 2
+skeleton = NodePath("../..")
+
+[node name="DebugGround10" parent="." instance=ExtResource("1_lgytk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -16)
+layers = 2
+skeleton = NodePath("../..")
