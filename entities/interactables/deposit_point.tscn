@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cy8kx5h12w1ho"]
+
+[ext_resource type="Script" path="res://entities/interactables/deposit_point.gd" id="1_hrks7"]
+[ext_resource type="PackedScene" uid="uid://pletdq3bfgxj" path="res://systems/interact.tscn" id="2_b51af"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_1hcep"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_olrv2"]
+albedo_color = Color(1, 0, 0.25098, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ea48k"]
+
+[node name="DepositPoint" type="Area3D"]
+script = ExtResource("1_hrks7")
+DepositType = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.38344, 0, 0, 0, 1.38344, 0, 0, 0, 1.38344, 0, 0.7, 0)
+mesh = SubResource("PrismMesh_1hcep")
+surface_material_override/0 = SubResource("StandardMaterial3D_olrv2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.05, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_ea48k")
+
+[node name="Interact" parent="." instance=ExtResource("2_b51af")]
+interactText = ""
+methodName = "_deposit"

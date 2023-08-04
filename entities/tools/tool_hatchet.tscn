@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlbvn700ekh7c"]
+
+[ext_resource type="PackedScene" path="res://entities/tools/tool.tscn" id="1_i2vsq"]
+[ext_resource type="Script" path="res://entities/tools/tool_hatchet.gd" id="2_rsyq7"]
+[ext_resource type="PackedScene" uid="uid://cssg1td6mhx8a" path="res://models/tools/mod_tool_hatchet.tscn" id="3_xcjx4"]
+
+[node name="Hatchet" instance=ExtResource("1_i2vsq")]
+script = ExtResource("2_rsyq7")
+primaryActionCooldown = 0.3
+
+[node name="Raycaster" parent="." index="0"]
+target_position = Vector3(0, -3, 0)
+collision_mask = 32
+collide_with_bodies = false
+
+[node name="mod_tool_hatchet" parent="." index="5" instance=ExtResource("3_xcjx4")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

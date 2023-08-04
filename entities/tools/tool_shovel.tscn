@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://g7gspmuhnkt0"]
+
+[ext_resource type="PackedScene" path="res://entities/tools/tool.tscn" id="1_xyify"]
+[ext_resource type="Script" path="res://entities/tools/tool_shovel.gd" id="2_7db7f"]
+[ext_resource type="PackedScene" uid="uid://fr0eee3fekrl" path="res://models/tools/mod_tool_shovel.tscn" id="3_0pn3m"]
+
+[node name="Shovel" instance=ExtResource("1_xyify")]
+script = ExtResource("2_7db7f")
+
+[node name="mod_tool_shovel" parent="." index="5" instance=ExtResource("3_0pn3m")]
+transform = Transform3D(3.82137e-16, -8.74228e-09, -0.2, -0.2, -8.74228e-09, 0, -8.74228e-09, 0.2, -8.74228e-09, 0, 0.7, 0)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://do4bf8g0uepl8"]
+
+[ext_resource type="Script" path="res://entities/tools/tool_pickup.gd" id="1_43ims"]
+[ext_resource type="PackedScene" uid="uid://pletdq3bfgxj" path="res://systems/interact.tscn" id="2_m6o2w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2vknn"]
+albedo_color = Color(0.466667, 0.32549, 0, 1)
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_xyqeq"]
+material = SubResource("StandardMaterial3D_2vknn")
+
+[node name="ToolPickup" type="Node3D"]
+script = ExtResource("1_43ims")
+
+[node name="Interact" parent="." instance=ExtResource("2_m6o2w")]
+methodName = "OnGrab"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("TubeTrailMesh_xyqeq")

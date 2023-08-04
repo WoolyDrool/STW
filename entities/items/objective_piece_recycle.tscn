@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd0wehro7d6bx"]
+
+[ext_resource type="Script" path="res://entities/items/objective_piece.gd" id="1_54elr"]
+[ext_resource type="PackedScene" uid="uid://pletdq3bfgxj" path="res://systems/interact.tscn" id="2_jf8c4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ej0k"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ctbtc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4vbw"]
+albedo_color = Color(0.25098, 0.54902, 0.643137, 1)
+
+[node name="ObjectivePiece" type="Area3D"]
+disable_mode = 2
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_54elr")
+itemName = "Trash"
+recycling = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.285377, 0, 0, 0, 0.285377, 0, 0, 0, 0.285377, 0, 0, 0)
+shape = SubResource("BoxShape3D_7ej0k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.285377, 0, 0, 0, 0.285377, 0, 0, 0, 0.285377, 0, 0, 0)
+mesh = SubResource("SphereMesh_ctbtc")
+surface_material_override/0 = SubResource("StandardMaterial3D_o4vbw")
+
+[node name="Interact" parent="." instance=ExtResource("2_jf8c4")]
+interactText = "Recycling"
+methodName = "_on_grab"
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+can_sleep = false
+freeze_mode = 1

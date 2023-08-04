@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://jvmi8xmmmoka"]
+
+[ext_resource type="Script" path="res://entities/objects/locked_object.gd" id="1_iqedc"]
+[ext_resource type="PackedScene" uid="uid://pletdq3bfgxj" path="res://systems/interact.tscn" id="1_jotlt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1megg"]
+albedo_color = Color(0.25098, 0.188235, 0.152941, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ljufo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n41eg"]
+size = Vector3(2, 3, 1.2)
+
+[node name="LockedObject" type="Node3D"]
+script = ExtResource("1_iqedc")
+locked = true
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(1.69, 0, 0, 0, 3.0475, 0, 0, 0, 0.2, 0, 1.5, 0)
+material_override = SubResource("StandardMaterial3D_1megg")
+mesh = SubResource("BoxMesh_ljufo")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_n41eg")
+
+[node name="Interact" parent="." instance=ExtResource("1_jotlt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+interactText = "Door"
+methodName = "_started"
+
+[editable path="Interact"]
