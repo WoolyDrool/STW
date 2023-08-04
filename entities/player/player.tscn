@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://buj0i2kl571cx"]
+[gd_scene load_steps=14 format=3 uid="uid://buj0i2kl571cx"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_m01v4"]
 [ext_resource type="Script" path="res://entities/player/player_camera.gd" id="2_ecwpp"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://entities/player/CameraHolder.gd" id="2_yuupq"]
 [ext_resource type="FontFile" uid="uid://d1o6kv64g121o" path="res://media/Fonts/coolvetica condensed rg.ttf" id="3_vr1kv"]
 [ext_resource type="Texture2D" uid="uid://dlp2maf4rcvvp" path="res://media/Sprites/UI/Overlays/spr_UI_crosshair.png" id="4_jky7m"]
-[ext_resource type="PackedScene" uid="uid://myhwiai8lqgc" path="res://ui/minigames/lock/minigame_unlock_ui.tscn" id="5_6tkap"]
 [ext_resource type="Script" path="res://entities/player/player_inventory.gd" id="5_2148u"]
 [ext_resource type="PackedScene" uid="uid://dlbvn700ekh7c" path="res://entities/tools/tool_hatchet.tscn" id="7_bfvat"]
 
@@ -228,9 +227,6 @@ offset_left = 980.0
 offset_right = 980.0
 offset_bottom = 1080.0
 grow_vertical = 2
-
-[node name="minigame_unlock_ui" parent="." instance=ExtResource("5_6tkap")]
-visible = false
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("5_2148u")
