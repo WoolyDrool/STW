@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ct5br2utftc1l"]
+[gd_scene load_steps=10 format=3 uid="uid://ct5br2utftc1l"]
 
 [ext_resource type="PackedScene" uid="uid://bsc8oke8kg64n" path="res://environment/mega_floor.tscn" id="2_can57"]
 [ext_resource type="PackedScene" uid="uid://buj0i2kl571cx" path="res://entities/player/player.tscn" id="2_lsily"]
 [ext_resource type="PackedScene" path="res://models/creatures/kour_working_file.tscn" id="3_rc1qt"]
+[ext_resource type="PackedScene" uid="uid://qxjmbuktix3a" path="res://entities/interactables/shrines/zathu_shrine.tscn" id="4_v7tah"]
+[ext_resource type="PackedScene" uid="uid://bicee8pq7lq0r" path="res://entities/interactables/shrines/jaum_shrine.tscn" id="5_1m2c6"]
+[ext_resource type="PackedScene" uid="uid://6g0skbalmllh" path="res://entities/interactables/shrines/nahki_shrine.tscn" id="6_5mmrq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7mdv"]
 
@@ -18,15 +21,26 @@ sky = SubResource("Sky_m5p4p")
 [node name="Player" parent="." instance=ExtResource("2_lsily")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="KourWorkingFile" parent="." instance=ExtResource("3_rc1qt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0853, 0, -12.9326)
+
+[node name="ZathuShrine" parent="." instance=ExtResource("4_v7tah")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 8)
+
+[node name="JaumShrine" parent="." instance=ExtResource("5_1m2c6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="NahkiShrine" parent="." instance=ExtResource("6_5mmrq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 8)
+
+[node name="Env" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Env"]
 environment = SubResource("Environment_f5mwj")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
 light_energy = 1.849
 shadow_enabled = true
 
-[node name="MegaFloor" parent="." instance=ExtResource("2_can57")]
-
-[node name="KourWorkingFile" parent="." instance=ExtResource("3_rc1qt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0853, 0, -12.9326)
+[node name="MegaFloor" parent="Env" instance=ExtResource("2_can57")]
