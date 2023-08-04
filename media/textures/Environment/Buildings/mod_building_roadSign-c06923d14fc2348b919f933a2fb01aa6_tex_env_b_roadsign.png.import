@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bftjja3ojwak4"
+path.s3tc="res://.godot/imported/mod_building_roadSign-c06923d14fc2348b919f933a2fb01aa6_tex_env_b_roadsign.png-bea08050f912d97b3eb48cbcadbd554d.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={}
+
+[deps]
+
+source_file="res://media/textures/Environment/Buildings/mod_building_roadSign-c06923d14fc2348b919f933a2fb01aa6_tex_env_b_roadsign.png"
+dest_files=["res://.godot/imported/mod_building_roadSign-c06923d14fc2348b919f933a2fb01aa6_tex_env_b_roadsign.png-bea08050f912d97b3eb48cbcadbd554d.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

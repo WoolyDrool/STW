@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://pletdq3bfgxj"]
+
+[ext_resource type="Script" path="res://systems/interact.gd" id="1_33awc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2ctav"]
+radius = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_3i77p"]
+
+[node name="Interact" type="Area3D"]
+collision_layer = 16
+script = ExtResource("1_33awc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_2ctav")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_3i77p")

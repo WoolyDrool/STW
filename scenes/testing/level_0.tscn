@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct5br2utftc1l"]
+
+[ext_resource type="PackedScene" uid="uid://desbu5rojua8d" path="res://environment/debug_ground.tscn" id="1_nr5vb"]
+[ext_resource type="PackedScene" uid="uid://buj0i2kl571cx" path="res://entities/player/player.tscn" id="2_lsily"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7mdv"]
+
+[sub_resource type="Sky" id="Sky_m5p4p"]
+sky_material = SubResource("ProceduralSkyMaterial_b7mdv")
+
+[sub_resource type="Environment" id="Environment_f5mwj"]
+background_mode = 2
+sky = SubResource("Sky_m5p4p")
+
+[node name="level0" type="Node3D"]
+
+[node name="DebugGround" parent="." instance=ExtResource("1_nr5vb")]
+layers = 2
+
+[node name="Player" parent="." instance=ExtResource("2_lsily")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_f5mwj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)

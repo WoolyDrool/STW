@@ -1,0 +1,108 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfuum0m1fdiet"]
+
+[ext_resource type="Script" path="res://ui/main_ui.gd" id="1_43bkd"]
+[ext_resource type="FontFile" uid="uid://d1o6kv64g121o" path="res://media/Fonts/coolvetica condensed rg.ttf" id="2_rrobn"]
+[ext_resource type="Texture2D" uid="uid://bl3cina5ecdki" path="res://media/Sprites/UI/Overlays/spr_UI_toolbarDial.png" id="3_2lx63"]
+[ext_resource type="Script" path="res://ui/toolbelt_ui.gd" id="3_ky6rg"]
+
+[node name="MainUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 960.0
+offset_top = 1080.0
+offset_right = -960.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.881274, 1.00687)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_43bkd")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 1
+offset_left = -1067.72
+offset_top = -946.207
+offset_right = -863.723
+offset_bottom = -900.207
+
+[node name="TrashCount" type="Label" parent="HSplitContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rrobn")
+theme_override_font_sizes/font_size = 35
+text = "Trash - 0"
+
+[node name="RecCount" type="Label" parent="HSplitContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rrobn")
+theme_override_font_sizes/font_size = 35
+text = "Recycle - 0"
+
+[node name="CollectedCount" type="RichTextLabel" parent="."]
+modulate = Color(0.960784, 0.705882, 0, 1)
+layout_mode = 0
+offset_left = -1067.72
+offset_top = -1057.94
+offset_right = -1027.72
+offset_bottom = -1031.94
+scale = Vector2(4.29735, 4.29735)
+theme_override_fonts/normal_font = ExtResource("2_rrobn")
+theme_override_font_sizes/normal_font_size = 21
+text = "00"
+
+[node name="TotalCount" type="RichTextLabel" parent="."]
+modulate = Color(0.960784, 0.705882, 0, 1)
+layout_mode = 0
+offset_left = -967.755
+offset_top = -1057.94
+offset_right = -927.755
+offset_bottom = -1031.94
+scale = Vector2(4.29735, 4.29735)
+theme_override_fonts/normal_font = ExtResource("2_rrobn")
+theme_override_font_sizes/normal_font_size = 21
+text = "00"
+
+[node name="Toolbelt" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_ky6rg")
+
+[node name="GridContainer" type="GridContainer" parent="Toolbelt"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1030.0
+offset_top = -367.023
+offset_right = 1030.0
+offset_bottom = 144.977
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.205458, 0.205458)
+pivot_offset = Vector2(1032, 256)
+columns = 4
+
+[node name="TextureRect" type="TextureRect" parent="Toolbelt/GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_2lx63")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Toolbelt/GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_2lx63")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Toolbelt/GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_2lx63")
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="Toolbelt/GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_2lx63")
+stretch_mode = 2

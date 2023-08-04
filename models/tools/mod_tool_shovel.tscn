@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://fr0eee3fekrl"]
+
+[ext_resource type="PackedScene" uid="uid://b0q2mdel14ele" path="res://models/tools/mod_tool_shovel.blend" id="1_2o3tt"]
+
+[node name="mod_tool_shovel" instance=ExtResource("1_2o3tt")]

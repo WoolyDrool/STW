@@ -1,0 +1,40 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dyighny23yihr"
+path="res://.godot/imported/mod_player_arm_left.dae-ebf1f3f238c8df9197b2af9f9c225beb.scn"
+
+[deps]
+
+source_file="res://models/mod_player_arm_left.dae"
+dest_files=["res://.godot/imported/mod_player_arm_left.dae-ebf1f3f238c8df9197b2af9f9c225beb.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=false
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:LeftArm/Skeleton3D": {
+"retarget/bone_map": Object(BoneMap,"resource_local_to_scene":false,"resource_name":"","profile":null,"bonemap":null,"script":null)
+,
+"retarget/remove_tracks/unmapped_bones": true
+}
+}
+}
+gltf/embedded_image_handling=1

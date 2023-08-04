@@ -1,0 +1,33 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://d1o6kv64g121o"
+path="res://.godot/imported/coolvetica condensed rg.ttf-7d2adb6931a0a419f8da1526e81d7c95.fontdata"
+
+[deps]
+
+source_file="res://media/Fonts/coolvetica condensed rg.ttf"
+dest_files=["res://.godot/imported/coolvetica condensed rg.ttf-7d2adb6931a0a419f8da1526e81d7c95.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}
