@@ -11,8 +11,15 @@ config_version=5
 [application]
 
 config/name="Stw Master Proejct"
+run/main_scene="res://scenes/testing/level_0.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://sprites/icon.svg"
+
+[autoload]
+
+PlayerInventory="*res://entities/player/player_inventory.gd"
+EventBus="*res://globals/event_bus.gd"
+TrailManager="*res://systems/gameplay/gameplay_trail_manager.cs"
 
 [dotnet]
 
