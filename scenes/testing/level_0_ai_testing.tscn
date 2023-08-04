@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddf1uuw3p30a6"]
+
+[ext_resource type="PackedScene" uid="uid://dbeitcqkgyxws" path="res://models/creatures/kour_working_file.tscn" id="1_guaoo"]
+[ext_resource type="PackedScene" uid="uid://bsc8oke8kg64n" path="res://environment/mega_floor.tscn" id="2_whiyw"]
+[ext_resource type="PackedScene" uid="uid://buj0i2kl571cx" path="res://entities/player/player.tscn" id="3_chepr"]
+
+[node name="level0_AI_testing" type="Node3D"]
+
+[node name="KourWorkingFile" parent="." instance=ExtResource("1_guaoo")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -8)
+
+[node name="MegaFloor" parent="." instance=ExtResource("2_whiyw")]
+
+[node name="Player" parent="MegaFloor" instance=ExtResource("3_chepr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
