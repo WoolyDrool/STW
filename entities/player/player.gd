@@ -11,6 +11,7 @@ class_name Player
 @export var MAX_SLOPE_ANGLE = 40
 
 # Camera variables
+@export var USE_SWAY : bool = true
 @export var MOUSE_SENSITIVITY = 0.05
 @export var MOUSE_SMOOTHING = 10
 @export var CAM_SWAY : Vector3
@@ -130,14 +131,15 @@ func _process(delta):
 	cam_input = Vector2.ZERO
 
 func _cam_sway(delta):
-	# Camera Sway Z
-	if mousemov != null:
-		var finalSway 
-		if mousemov > CAM_SWAY_THRESH:
-			finalSway = rotation_helper.rotation.lerp(CAM_SWAY, CAM_SWAY_LERP * delta)
-		elif mousemov < -CAM_SWAY_THRESH:
-			finalSway = rotation_helper.rotation.lerp(-CAM_SWAY, CAM_SWAY_LERP * delta)
-		else:
-			finalSway = rotation_helper.rotation.lerp(CAM_SWAY_NORMAL, CAM_SWAY_LERP * delta)
-		rotation_helper.rotation.z = finalSway.z
-		#finalSway = 0
+	if USE_SWAY:
+		# Camera Sway Z
+		if mousemov != null:
+			var finalSway 
+			if mousemov > CAM_SWAY_THRESH:
+				finalSway = rotation_helper.rotation.lerp(CAM_SWAY, CAM_SWAY_LERP * delta)
+			elif mousemov < -CAM_SWAY_THRESH:
+				finalSway = rotation_helper.rotation.lerp(-CAM_SWAY, CAM_SWAY_LERP * delta)
+			else:
+				finalSway = rotation_helper.rotation.lerp(CAM_SWAY_NORMAL, CAM_SWAY_LERP * delta)
+			rotation_helper.rotation.z = finalSway.z
+			#finalSway = 0
