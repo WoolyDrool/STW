@@ -1,0 +1,237 @@
+[gd_scene load_steps=16 format=3 uid="uid://dpc2xjylcdgse"]
+
+[ext_resource type="Script" path="res://entities/player/player.gd" id="1_m01v4"]
+[ext_resource type="Script" path="res://entities/player/player_camera.gd" id="2_ecwpp"]
+[ext_resource type="PackedScene" uid="uid://cfuum0m1fdiet" path="res://ui/main_ui.tscn" id="2_xevq3"]
+[ext_resource type="Script" path="res://entities/player/CameraHolder.gd" id="2_yuupq"]
+[ext_resource type="FontFile" uid="uid://d1o6kv64g121o" path="res://media/Fonts/coolvetica condensed rg.ttf" id="3_vr1kv"]
+[ext_resource type="Texture2D" uid="uid://dlp2maf4rcvvp" path="res://media/Sprites/UI/Overlays/spr_UI_crosshair.png" id="4_jky7m"]
+[ext_resource type="PackedScene" uid="uid://myhwiai8lqgc" path="res://ui/minigames/lock/minigame_unlock_ui.tscn" id="5_6tkap"]
+[ext_resource type="Script" path="res://entities/player/player_inventory.gd" id="5_2148u"]
+[ext_resource type="Script" path="res://entities/player/toolbelt.gd" id="6_emh3c"]
+[ext_resource type="PackedScene" uid="uid://dlbvn700ekh7c" path="res://entities/tools/tool_hatchet.tscn" id="7_bfvat"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2muic"]
+
+[sub_resource type="Animation" id="Animation_fuksy"]
+resource_name = "anim_leftSwing_1"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../LeftHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1, -0.6, -1), Vector3(3.72529e-08, -0.6, -2.1), Vector3(3.72529e-08, -0.6, -2.1), Vector3(-1, -0.6, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../LeftHand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_a8l3l"]
+resource_name = "anim_rightSwing_1"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0512961, 0.142723, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, -0.6, -1), Vector3(0, -0.6, -1.9), Vector3(0, -0.6, -1.9), Vector3(1, -0.6, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0512961, 0.142723, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1xldh"]
+_data = {
+"anim_leftSwing_1": SubResource("Animation_fuksy"),
+"anim_rightSwing_1": SubResource("Animation_a8l3l")
+}
+
+[sub_resource type="AnimationRootNode" id="AnimationRootNode_hwi3p"]
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "rotation_helper")]
+collision_mask = 35
+script = ExtResource("1_m01v4")
+MAX_SPEED = 7
+JUMP_SPEED = 5
+ACCEL = 5.0
+DEACCEL = 10
+MAX_SLOPE_ANGLE = 60
+MOUSE_SENSITIVITY = 0.6
+MOUSE_SMOOTHING = 40
+CAM_SWAY = Vector3(0, 0, 0.15)
+CAM_SWAY_THRESH = 1
+CAM_SWAY_LERP = 3
+camera = NodePath("CameraHolder/Camera3D")
+rotation_helper = NodePath("CameraHolder")
+
+[node name="Body" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_2muic")
+
+[node name="CameraHolder" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("2_yuupq")
+
+[node name="Camera3D" type="Camera3D" parent="CameraHolder" node_paths=PackedStringArray("raycaster", "grabPoint")]
+current = true
+fov = 90.0
+script = ExtResource("2_ecwpp")
+raycaster = NodePath("AimCast")
+grabPoint = NodePath("Node3D")
+
+[node name="AimCast" type="RayCast3D" parent="CameraHolder/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(0, -2.5, 0)
+collision_mask = 48
+hit_from_inside = true
+collide_with_areas = true
+debug_shape_custom_color = Color(0.27451, 0.909804, 0, 1)
+
+[node name="ImmediateUI" type="Control" parent="CameraHolder/Camera3D"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Crosshair" type="TextureRect" parent="CameraHolder/Camera3D/ImmediateUI"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.024
+anchor_top = 0.5
+anchor_right = 1.024
+anchor_bottom = 0.5
+offset_left = -64.96
+offset_top = -20.0
+offset_right = 959.04
+offset_bottom = 492.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.0800003, 0.0800003)
+texture = ExtResource("4_jky7m")
+
+[node name="InteractText" type="Label" parent="CameraHolder/Camera3D/ImmediateUI"]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -7.0
+offset_right = 74.0
+offset_bottom = 33.0
+pivot_offset = Vector2(60, 21)
+auto_translate = false
+theme_override_fonts/font = ExtResource("3_vr1kv")
+theme_override_font_sizes/font_size = 30
+text = "Interact Text"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ModifierText" type="Label" parent="CameraHolder/Camera3D/ImmediateUI"]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -31.0
+offset_right = 74.0
+offset_bottom = 9.0
+pivot_offset = Vector2(60, 21)
+auto_translate = false
+theme_override_colors/font_color = Color(0.666667, 0.666667, 0.666667, 1)
+theme_override_fonts/font = ExtResource("3_vr1kv")
+theme_override_font_sizes/font_size = 25
+text = "[Modifier]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AppendText" type="Label" parent="CameraHolder/Camera3D/ImmediateUI"]
+layout_mode = 0
+offset_left = -45.0
+offset_top = 19.0
+offset_right = 74.0
+offset_bottom = 59.0
+pivot_offset = Vector2(60, 21)
+auto_translate = false
+theme_override_colors/font_color = Color(0.792157, 0.498039, 0.407843, 1)
+theme_override_fonts/font = ExtResource("3_vr1kv")
+theme_override_font_sizes/font_size = 25
+text = "[Append]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Toolbelt" type="Node3D" parent="CameraHolder/Camera3D" node_paths=PackedStringArray("LeftHandNode", "RightHandNode", "raycaster")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
+script = ExtResource("6_emh3c")
+LeftHandNode = NodePath("LeftHand")
+RightHandNode = NodePath("RightHand")
+raycaster = NodePath("../AimCast")
+
+[node name="ToolPlayer" type="AnimationPlayer" parent="CameraHolder/Camera3D/Toolbelt"]
+root_node = NodePath("../RightHand")
+libraries = {
+"": SubResource("AnimationLibrary_1xldh")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="CameraHolder/Camera3D/Toolbelt/ToolPlayer"]
+tree_root = SubResource("AnimationRootNode_hwi3p")
+anim_player = NodePath("..")
+
+[node name="RightHand" type="Node3D" parent="CameraHolder/Camera3D/Toolbelt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.6, -1)
+
+[node name="Hatchet" parent="CameraHolder/Camera3D/Toolbelt/RightHand" instance=ExtResource("7_bfvat")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 0, 0)
+
+[node name="LeftHand" type="Node3D" parent="CameraHolder/Camera3D/Toolbelt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.6, -1)
+
+[node name="Hatchet" parent="CameraHolder/Camera3D/Toolbelt/LeftHand" instance=ExtResource("7_bfvat")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Node3D" type="Node3D" parent="CameraHolder/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, -1)
+
+[node name="Node3D" type="Node3D" parent="CameraHolder"]
+
+[node name="MainUI" parent="." instance=ExtResource("2_xevq3")]
+offset_left = 980.0
+offset_right = 980.0
+offset_bottom = 1080.0
+grow_vertical = 2
+
+[node name="minigame_unlock_ui" parent="." instance=ExtResource("5_6tkap")]
+visible = false
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("5_2148u")
