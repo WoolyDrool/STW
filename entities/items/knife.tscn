@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcqhohjnnnfhe"]
+
+[ext_resource type="PackedScene" uid="uid://cirv2qr73tyah" path="res://entities/items/objective_piece.tscn" id="1_2nkug"]
+[ext_resource type="PackedScene" uid="uid://bvuql8br4s2n2" path="res://models/items/knife.tscn" id="2_2sv3x"]
+
+[node name="Knife" instance=ExtResource("1_2nkug")]
+
+[node name="MeshInstance3D" parent="." index="1"]
+visible = false
+
+[node name="Interact" parent="." index="2"]
+interactText = "Knife"
+
+[node name="Knife" parent="." index="4" instance=ExtResource("2_2sv3x")]
+transform = Transform3D(0.491622, 0, 0, 0, 0.491622, 0, 0, 0, 0.491622, 0, -0.3, 0.5)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://m33fuptpqwhi"]
+
+[ext_resource type="PackedScene" uid="uid://cirv2qr73tyah" path="res://entities/items/objective_piece.tscn" id="1_nownw"]
+[ext_resource type="PackedScene" uid="uid://q8qq5xkylbrw" path="res://models/items/deadBird.blend" id="2_37vih"]
+
+[node name="DeadBird" instance=ExtResource("1_nownw")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+visible = false
+
+[node name="MeshInstance3D" parent="." index="1"]
+visible = false
+
+[node name="Interact" parent="." index="2"]
+interactText = "Dead Bird"
+
+[node name="deadBird" parent="." index="4" instance=ExtResource("2_37vih")]
+transform = Transform3D(-1, 2.98023e-08, 0, -2.98023e-08, -1, 0, 0, 0, 1, 0, 0, 0)
