@@ -1,8 +1,23 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=2 format=3 uid="uid://s8f4rp35hvus"]
 
 [ext_resource type="PackedScene" uid="uid://cpgdejxjfhkpn" path="res://models/creatures/KourWorkingFile.blend" id="1_b8dtu"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://csp181xx00bxe"]
+
+[ext_resource type="PackedScene" uid="uid://cpgdejxjfhkpn" path="res://models/creatures/KourWorkingFile.blend" id="1_b8dtu"]
+[ext_resource type="PackedScene" uid="uid://bbk4ug6i8b14s" path="res://models/creatures/vision_cones.tscn" id="2_6x5ma"]
+[ext_resource type="Script" path="res://models/creatures/queenAI.gd" id="2_wi7x8"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bo3do"]
+points = PackedVector3Array(-5.96046e-08, -1, 1, -0.195184, -1, 0.980619, 0.194988, -1, 0.980619, -5.96046e-08, 1, 0, -0.382733, -1, 0.923845, 0.382537, -1, 0.923845, -0.707126, -1, 0.70693, -0.555599, -1, 0.831441, 0.555403, -1, 0.831441, 0.70693, -1, 0.70693, 0.831441, -1, 0.555403, 0.923845, -1, 0.382537, 0.980618, -1, 0.194988, 1, -1, 0, 0.980618, -1, -0.195184, 0.923845, -1, -0.382733, 0.831441, -1, -0.555599, 0.70693, -1, -0.707126, 0.555403, -1, -0.831637, 0.382537, -1, -0.924041, 0.194988, -1, -0.980814, -5.96046e-08, -1, -1, -0.195184, -1, -0.980814, -0.382733, -1, -0.924041, -0.555599, -1, -0.831637, -0.707126, -1, -0.707126, -0.831637, -1, -0.555599, -0.924041, -1, -0.382733, -0.980814, -1, -0.195184, -1, -1, 0, -0.980814, -1, 0.194988, -0.924041, -1, 0.382537, -0.831637, -1, 0.555403)
+>>>>>>> Stashed changes
 
 [node name="KourWorkingFile" instance=ExtResource("1_b8dtu")]
+script = ExtResource("2_wi7x8")
+
+[node name="VisionTimer" type="Timer" parent="." index="0"]
+autostart = true
 
 [node name="tail" parent="metarig/barrelSpine" index="0"]
 transform = Transform3D(1, 2.85063e-07, 2.25497e-06, -1.48249e-07, -0.981811, 0.189857, 2.2681e-06, -0.189858, -0.981805, -4.40536e-13, -5.96046e-07, 1.78814e-07)
@@ -12,6 +27,16 @@ transform = Transform3D(1, 1.656e-06, 3.11269e-08, -2.36572e-07, 0.124206, 0.992
 
 [node name="spine_012" parent="metarig/barrelSpine/Torso2" index="0"]
 transform = Transform3D(1, -2.36522e-07, 1.4005e-06, 1.41913e-06, 0.125856, -0.992048, 5.83796e-08, 0.992049, 0.125856, 2.84217e-14, 2.92061, 1.19209e-07)
+
+[node name="Vision" type="Area3D" parent="metarig/barrelSpine/Torso2/spine_012/Head" index="0"]
+transform = Transform3D(1, -2.13163e-13, 0, -1.06581e-13, 1, 0, 1.20792e-13, 0, 1, 4.10306e-06, 7.73366, 5.45693)
+
+[node name="Cone" parent="metarig/barrelSpine/Torso2/spine_012/Head/Vision" index="0" instance=ExtResource("2_6x5ma")]
+transform = Transform3D(-5, 4.29537e-06, -2.52094e-06, 7.54954e-07, -1.84792, -4.64599, -4.92294e-06, -4.64599, 1.84792, -1.54837e-06, 1.13827, 3.74892)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="metarig/barrelSpine/Torso2/spine_012/Head/Vision" index="1"]
+transform = Transform3D(-5, 4.29537e-06, -2.52094e-06, 7.54954e-07, -1.84792, -4.64599, -4.92294e-06, -4.64599, 1.84792, -1.54837e-06, 1.13827, 3.74892)
+shape = SubResource("ConvexPolygonShape3D_bo3do")
 
 [node name="UpperShoulderL" parent="metarig/barrelSpine/Torso2" index="1"]
 transform = Transform3D(0.631001, 0.516464, 0.578881, 0.317042, -0.852708, 0.415179, 0.708041, -0.0784489, -0.7018, 0.227901, 2.05544, -0.143698)
@@ -76,11 +101,13 @@ transform = Transform3D(1, -5.6117e-08, 2.3172e-07, 1.60073e-10, 0.972063, 0.234
 [node name="r_toe_R" parent="metarig/barrelSpine/thigh_R/foot_R/r_pastern_R" index="0"]
 transform = Transform3D(1, -7.70948e-15, 1.19371e-14, 3.7892e-18, 0.84018, 0.542307, -1.42102e-14, -0.542307, 0.84018, 4.09672e-14, 0.441136, -7.45682e-08)
 
-[node name="Plane" parent="." index="1"]
+[node name="Plane" parent="." index="2"]
 visible = false
 
-[node name="Shields" parent="." index="2"]
+[node name="Shields" parent="." index="3"]
 visible = false
 
-[node name="Sword" parent="." index="3"]
+[node name="Sword" parent="." index="4"]
 visible = false
+
+[connection signal="timeout" from="VisionTimer" to="." method="_on_vision_timer_timeout"]
