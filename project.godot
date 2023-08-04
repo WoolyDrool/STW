@@ -21,6 +21,11 @@ PlayerInventory="*res://entities/player/player_inventory.gd"
 EventBus="*res://globals/event_bus.gd"
 TrailManager="*res://systems/gameplay/gameplay_trail_manager.cs"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [dotnet]
 
 project/assembly_name="Stw Master Proejct"
