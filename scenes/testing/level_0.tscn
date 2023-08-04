@@ -44,3 +44,27 @@ light_energy = 1.849
 shadow_enabled = true
 
 [node name="MegaFloor" parent="Env" instance=ExtResource("2_can57")]
+
+[node name="MegaFloor2" parent="Env" instance=ExtResource("2_can57")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 0)
+
+[node name="MegaFloor3" parent="Env" instance=ExtResource("2_can57")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 48)
+
+[node name="MegaFloor4" parent="Env" instance=ExtResource("2_can57")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 48)
+
+[node name="MegaFloor5" parent="Env" instance=ExtResource("2_can57")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 48)
+
+[node name="MegaFloor6" parent="Env" instance=ExtResource("2_can57")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 0)
+
+[node name="MegaFloor7" parent="Env" instance=ExtResource("2_can57")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -48)
+
+[node name="MegaFloor8" parent="Env" instance=ExtResource("2_can57")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -48)
+
+[node name="MegaFloor9" parent="Env" instance=ExtResource("2_can57")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -48)
