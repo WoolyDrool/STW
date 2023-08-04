@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://6g0skbalmllh"]
+
+[ext_resource type="PackedScene" uid="uid://dha0ovhq7hhqa" path="res://entities/interactables/shrines/default_shrine.tscn" id="1_dsv14"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8rtfk"]
+albedo_color = Color(0.117647, 0.623529, 0, 1)
+
+[node name="NahkiShrine" instance=ExtResource("1_dsv14")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_8rtfk")
+
+[node name="Interact" parent="." index="1"]
+appendText = "(Nahki)"

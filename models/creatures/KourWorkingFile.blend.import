@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cpgdejxjfhkpn"
-path="res://.godot/imported/KourWorkingFile.blend-007d07f05a2dea9985c0ba1b3db0b2c8.scn"
+path="res://.godot/imported/KourWorkingFile.blend-c7e573f7e8094dbe40d762cdd8043098.scn"
 
 [deps]
 
-source_file="res://Models/KourWorkingFile.blend"
-dest_files=["res://.godot/imported/KourWorkingFile.blend-007d07f05a2dea9985c0ba1b3db0b2c8.scn"]
+source_file="res://models/creatures/KourWorkingFile.blend"
+dest_files=["res://.godot/imported/KourWorkingFile.blend-c7e573f7e8094dbe40d762cdd8043098.scn"]
 
 [params]
 
