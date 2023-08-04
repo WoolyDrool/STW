@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dpc2xjylcdgse"]
+[gd_scene load_steps=15 format=3 uid="uid://buj0i2kl571cx"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_m01v4"]
 [ext_resource type="Script" path="res://entities/player/player_camera.gd" id="2_ecwpp"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dlp2maf4rcvvp" path="res://media/Sprites/UI/Overlays/spr_UI_crosshair.png" id="4_jky7m"]
 [ext_resource type="PackedScene" uid="uid://myhwiai8lqgc" path="res://ui/minigames/lock/minigame_unlock_ui.tscn" id="5_6tkap"]
 [ext_resource type="Script" path="res://entities/player/player_inventory.gd" id="5_2148u"]
-[ext_resource type="Script" path="res://entities/player/toolbelt.gd" id="6_emh3c"]
 [ext_resource type="PackedScene" uid="uid://dlbvn700ekh7c" path="res://entities/tools/tool_hatchet.tscn" id="7_bfvat"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2muic"]
@@ -191,12 +190,8 @@ text = "[Append]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Toolbelt" type="Node3D" parent="CameraHolder/Camera3D" node_paths=PackedStringArray("LeftHandNode", "RightHandNode", "raycaster")]
+[node name="Toolbelt" type="Node3D" parent="CameraHolder/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
-script = ExtResource("6_emh3c")
-LeftHandNode = NodePath("LeftHand")
-RightHandNode = NodePath("RightHand")
-raycaster = NodePath("../AimCast")
 
 [node name="ToolPlayer" type="AnimationPlayer" parent="CameraHolder/Camera3D/Toolbelt"]
 root_node = NodePath("../RightHand")
@@ -213,12 +208,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.6, -1)
 
 [node name="Hatchet" parent="CameraHolder/Camera3D/Toolbelt/RightHand" instance=ExtResource("7_bfvat")]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 0, 0)
+script = null
 
 [node name="LeftHand" type="Node3D" parent="CameraHolder/Camera3D/Toolbelt"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.6, -1)
 
 [node name="Hatchet" parent="CameraHolder/Camera3D/Toolbelt/LeftHand" instance=ExtResource("7_bfvat")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+script = null
 
 [node name="Node3D" type="Node3D" parent="CameraHolder/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, -1)
@@ -226,6 +223,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, -1)
 [node name="Node3D" type="Node3D" parent="CameraHolder"]
 
 [node name="MainUI" parent="." instance=ExtResource("2_xevq3")]
+visible = false
 offset_left = 980.0
 offset_right = 980.0
 offset_bottom = 1080.0
