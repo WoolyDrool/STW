@@ -192,6 +192,7 @@ vertical_alignment = 1
 
 [node name="Toolbelt" type="Node3D" parent="CameraHolder/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
+visible = false
 
 [node name="ToolPlayer" type="AnimationPlayer" parent="CameraHolder/Camera3D/Toolbelt"]
 root_node = NodePath("../RightHand")
@@ -231,3 +232,9 @@ grow_vertical = 2
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("5_2148u")
+
+[node name="PlayerLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+light_color = Color(0.788235, 1, 0.8, 1)
+light_energy = 0.412
+omni_range = 1.36
