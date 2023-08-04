@@ -1,6 +1,8 @@
 extends Area3D
 
 # This node will be attached to other nodes and will handle all the interaction handling
+# It calls methodName in its parent
+# Intended to be bare bones and reusable as possible
 
 @export var interactText : String = "Default Message"
 @export var modifierText : String = ""
