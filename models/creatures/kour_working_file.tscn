@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://csp181xx00bxe"]
+
+[ext_resource type="PackedScene" uid="uid://cpgdejxjfhkpn" path="res://Models/KourWorkingFile.blend" id="1_b8dtu"]
+
+[node name="KourWorkingFile" instance=ExtResource("1_b8dtu")]
+
+[node name="tail" parent="metarig/barrelSpine" index="0"]
+transform = Transform3D(1, 2.85063e-07, 2.25497e-06, -1.48249e-07, -0.981811, 0.189857, 2.2681e-06, -0.189858, -0.981805, -4.40536e-13, -5.96046e-07, 1.78814e-07)
+
+[node name="Torso2" parent="metarig/barrelSpine" index="1"]
+transform = Transform3D(1, 1.656e-06, 3.11269e-08, -2.36572e-07, 0.124206, 0.992256, 1.63931e-06, -0.992256, 0.124206, 7.43932e-07, 5.28022, -0.445755)
+
+[node name="spine_012" parent="metarig/barrelSpine/Torso2" index="0"]
+transform = Transform3D(1, -2.36522e-07, 1.4005e-06, 1.41913e-06, 0.125856, -0.992048, 5.83796e-08, 0.992049, 0.125856, 2.84217e-14, 2.92061, 1.19209e-07)
+
+[node name="UpperShoulderL" parent="metarig/barrelSpine/Torso2" index="1"]
+transform = Transform3D(0.631001, 0.516464, 0.578881, 0.317042, -0.852708, 0.415179, 0.708041, -0.0784489, -0.7018, 0.227901, 2.05544, -0.143698)
+
+[node name="UpperShoulderL_002" parent="metarig/barrelSpine/Torso2/UpperShoulderL" index="0"]
+transform = Transform3D(0.95404, 0.0956667, -0.283997, 0.120463, 0.745315, 0.655739, 0.2744, -0.659813, 0.699536, -0.017776, 3.60852, -0.189293)
+
+[node name="UpperShoulderL_003" parent="metarig/barrelSpine/Torso2/UpperShoulderL/UpperShoulderL_002" index="0"]
+transform = Transform3D(0.988929, -0.142352, 0.0419081, 0.148214, 0.961373, -0.231937, -0.00727271, 0.235581, 0.971828, -1.19209e-07, 2.08782, 1.78814e-07)
+
+[node name="UpperShoulderL_004" parent="metarig/barrelSpine/Torso2" index="2"]
+transform = Transform3D(0.631001, -0.516464, -0.57888, -0.317042, -0.852708, 0.415179, -0.708041, -0.0784493, -0.7018, -0.204941, 2.05516, -0.0897779)
+
+[node name="UpperShoulderL_006" parent="metarig/barrelSpine/Torso2/UpperShoulderL_004" index="0"]
+transform = Transform3D(0.979899, -0.137365, 0.144668, 0.0102338, 0.75883, 0.651208, -0.199232, -0.636638, 0.744983, 0.0177761, 3.60852, -0.189294)
+
+[node name="UpperShoulderL_007" parent="metarig/barrelSpine/Torso2/UpperShoulderL_004/UpperShoulderL_006" index="0"]
+transform = Transform3D(0.910117, 0.361265, -0.202913, -0.378893, 0.923825, -0.0546589, 0.16771, 0.126628, 0.97767, 4.76837e-07, 2.08782, 0)
+
+[node name="shoulder_L" parent="metarig/barrelSpine" index="2"]
+transform = Transform3D(0.964473, 0.147645, 0.219071, 0.158988, 0.33787, -0.927667, -0.210983, 0.92954, 0.302393, 0.396937, 4.81286, -1.76604)
+
+[node name="upper_arm_L" parent="metarig/barrelSpine/shoulder_L" index="0"]
+transform = Transform3D(0.964473, -0.187167, -0.186442, 0.147647, 0.967116, -0.207092, 0.219072, 0.172207, 0.960392, -0.167649, 3.65707, 0.473461)
+
+[node name="forearm_L" parent="metarig/barrelSpine/shoulder_L/upper_arm_L" index="0"]
+transform = Transform3D(1, -5.60626e-08, 4.8825e-07, 1.94519e-08, 0.997209, 0.074663, -4.91073e-07, -0.074663, 0.997209, 2.12463e-08, 1.26549, 1.94624e-07)
+
+[node name="hand_L" parent="metarig/barrelSpine/shoulder_L/upper_arm_L/forearm_L" index="0"]
+transform = Transform3D(1, 1.08325e-07, -2.12389e-07, 7.10543e-15, 0.890824, 0.454348, 2.38419e-07, -0.454348, 0.890824, -2.00612e-08, 0.97589, 9.88002e-08)
+
+[node name="f_toe_L" parent="metarig/barrelSpine/shoulder_L/upper_arm_L/forearm_L/hand_L" index="0"]
+transform = Transform3D(1, 0, 7.15256e-07, -3.1441e-07, 0.898205, 0.439576, -6.42447e-07, -0.439576, 0.898205, 0, 0.598821, 8.5165e-08)
+
+[node name="shoulder_R" parent="metarig/barrelSpine" index="3"]
+transform = Transform3D(0.964473, -0.147648, -0.219072, -0.158989, 0.33787, -0.927667, 0.210987, 0.92954, 0.302392, -0.396931, 4.81286, -1.76604)
+
+[node name="upper_arm_R" parent="metarig/barrelSpine/shoulder_R" index="0"]
+transform = Transform3D(0.964473, 0.187167, 0.186442, -0.147647, 0.967116, -0.207092, -0.219072, 0.172207, 0.960392, 0.167649, 3.65707, 0.473461)
+
+[node name="forearm_R" parent="metarig/barrelSpine/shoulder_R/upper_arm_R" index="0"]
+transform = Transform3D(1, 2.15159e-08, -4.75894e-07, 1.40757e-08, 0.997209, 0.074663, 4.76172e-07, -0.074663, 0.997209, 2.0213e-09, 1.26549, -1.39703e-07)
+
+[node name="hand_R" parent="metarig/barrelSpine/shoulder_R/upper_arm_R/forearm_R" index="0"]
+transform = Transform3D(1, -1.08325e-07, 2.12389e-07, -1.06581e-14, 0.890824, 0.454348, -2.38419e-07, -0.454348, 0.890824, 7.96658e-08, 0.97589, 6.62546e-08)
+
+[node name="f_toe_R" parent="metarig/barrelSpine/shoulder_R/upper_arm_R/forearm_R/hand_R" index="0"]
+transform = Transform3D(1, 0, -7.15256e-07, 3.1441e-07, 0.898205, 0.439577, 6.42447e-07, -0.439577, 0.898205, 5.96048e-08, 0.598821, -1.82071e-07)
+
+[node name="thigh_L" parent="metarig/barrelSpine" index="4"]
+transform = Transform3D(0.999998, 0.00146598, 0.00106843, 0.00128351, -0.155594, -0.987821, -0.00128188, 0.98782, -0.155595, 0.815071, 0.822323, 0.199032)
+
+[node name="thigh_R" parent="metarig/barrelSpine" index="5"]
+transform = Transform3D(0.999998, -0.00146928, -0.00106791, -0.00128351, -0.155594, -0.987821, 0.00128522, 0.98782, -0.155595, -0.815072, 0.822323, 0.199029)
+
+[node name="foot_R" parent="metarig/barrelSpine/thigh_R" index="0"]
+transform = Transform3D(0.999998, 0.00125316, 0.00131317, -0.00146777, 0.983882, 0.178814, -0.00106792, -0.178816, 0.983882, 3.25963e-08, 3.17805, 1.33296e-07)
+
+[node name="r_pastern_R" parent="metarig/barrelSpine/thigh_R/foot_R" index="0"]
+transform = Transform3D(1, -5.6117e-08, 2.3172e-07, 1.60073e-10, 0.972063, 0.234719, -2.38419e-07, -0.234719, 0.972063, -3.07947e-08, 1.2948, 4.63414e-08)
+
+[node name="r_toe_R" parent="metarig/barrelSpine/thigh_R/foot_R/r_pastern_R" index="0"]
+transform = Transform3D(1, -7.70948e-15, 1.19371e-14, 3.7892e-18, 0.84018, 0.542307, -1.42102e-14, -0.542307, 0.84018, 4.09672e-14, 0.441136, -7.45682e-08)
+
+[node name="Plane" parent="." index="1"]
+visible = false
+
+[node name="Shields" parent="." index="2"]
+visible = false
+
+[node name="Sword" parent="." index="3"]
+visible = false
