@@ -1,13 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://ct5br2utftc1l"]
+[gd_scene load_steps=14 format=3 uid="uid://ct5br2utftc1l"]
 
-[ext_resource type="PackedScene" uid="uid://bsc8oke8kg64n" path="res://environment/mega_floor.tscn" id="2_can57"]
 [ext_resource type="PackedScene" uid="uid://buj0i2kl571cx" path="res://entities/player/player.tscn" id="2_lsily"]
-[ext_resource type="PackedScene" path="res://models/creatures/kour_working_file.tscn" id="3_rc1qt"]
+[ext_resource type="PackedScene" uid="uid://s8f4rp35hvus" path="res://models/creatures/kour_working_file.tscn" id="3_rc1qt"]
 [ext_resource type="PackedScene" uid="uid://qxjmbuktix3a" path="res://entities/interactables/shrines/zathu_shrine.tscn" id="4_v7tah"]
 [ext_resource type="PackedScene" uid="uid://bicee8pq7lq0r" path="res://entities/interactables/shrines/jaum_shrine.tscn" id="5_1m2c6"]
 [ext_resource type="PackedScene" uid="uid://6g0skbalmllh" path="res://entities/interactables/shrines/nahki_shrine.tscn" id="6_5mmrq"]
+[ext_resource type="PackedScene" uid="uid://b2pycx4jyy83o" path="res://environment/giga_floor.tscn" id="6_b48e7"]
+[ext_resource type="PackedScene" uid="uid://dcqhohjnnnfhe" path="res://entities/items/knife.tscn" id="7_j0k3n"]
+[ext_resource type="PackedScene" uid="uid://cxn7j37vt1m8x" path="res://environment/queen/Queen's Shrine.tscn" id="8_adq2q"]
+[ext_resource type="PackedScene" uid="uid://m33fuptpqwhi" path="res://entities/items/dead_bird.tscn" id="8_afuge"]
+[ext_resource type="PackedScene" uid="uid://ugdhhtuebmi5" path="res://entities/interactables/shrines/queen_shrine.tscn" id="9_oxgml"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7mdv"]
+sky_top_color = Color(0.0352941, 0.0941176, 0.286275, 1)
+sky_horizon_color = Color(0.0235294, 0.145098, 0.431373, 1)
+sky_curve = 0.0174943
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.0666667, 0.172549, 0.392157, 1)
+ground_curve = 0.0313835
 
 [sub_resource type="Sky" id="Sky_m5p4p"]
 sky_material = SubResource("ProceduralSkyMaterial_b7mdv")
@@ -15,23 +25,23 @@ sky_material = SubResource("ProceduralSkyMaterial_b7mdv")
 [sub_resource type="Environment" id="Environment_f5mwj"]
 background_mode = 2
 sky = SubResource("Sky_m5p4p")
+ambient_light_source = 3
+reflected_light_source = 2
+fog_enabled = true
+fog_light_color = Color(0.0470588, 0.0980392, 0.211765, 1)
+fog_light_energy = 1.66
+fog_sun_scatter = 0.05
+fog_density = 0.0239
+fog_aerial_perspective = 0.491
+fog_sky_affect = 0.0
 
 [node name="level0" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_lsily")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -23.0001, 2.00557, 25.0006)
 
 [node name="KourWorkingFile" parent="." instance=ExtResource("3_rc1qt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0853, 0, -12.9326)
-
-[node name="ZathuShrine" parent="." instance=ExtResource("4_v7tah")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 8)
-
-[node name="JaumShrine" parent="." instance=ExtResource("5_1m2c6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
-
-[node name="NahkiShrine" parent="." instance=ExtResource("6_5mmrq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 8)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.0853, 0, -35.9326)
 
 [node name="Env" type="Node3D" parent="."]
 
@@ -42,29 +52,53 @@ environment = SubResource("Environment_f5mwj")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
 light_energy = 1.849
 shadow_enabled = true
+sky_mode = 2
 
-[node name="MegaFloor" parent="Env" instance=ExtResource("2_can57")]
+[node name="GigaFloor" parent="Env" instance=ExtResource("6_b48e7")]
 
-[node name="MegaFloor2" parent="Env" instance=ExtResource("2_can57")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 0)
+[node name="GigaFloor2" parent="Env" instance=ExtResource("6_b48e7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -144, 0, 0)
 
-[node name="MegaFloor3" parent="Env" instance=ExtResource("2_can57")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 48)
+[node name="GigaFloor3" parent="Env" instance=ExtResource("6_b48e7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144, 0, 0)
 
-[node name="MegaFloor4" parent="Env" instance=ExtResource("2_can57")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 48)
+[node name="GigaFloor4" parent="Env" instance=ExtResource("6_b48e7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 144)
 
-[node name="MegaFloor5" parent="Env" instance=ExtResource("2_can57")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 48)
+[node name="GigaFloor5" parent="Env" instance=ExtResource("6_b48e7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -144, 0, 144)
 
-[node name="MegaFloor6" parent="Env" instance=ExtResource("2_can57")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 0)
+[node name="GigaFloor6" parent="Env" instance=ExtResource("6_b48e7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144, 0, 144)
 
-[node name="MegaFloor7" parent="Env" instance=ExtResource("2_can57")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -48)
+[node name="GigaFloor7" parent="Env" instance=ExtResource("6_b48e7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -144)
 
-[node name="MegaFloor8" parent="Env" instance=ExtResource("2_can57")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -48)
+[node name="GigaFloor8" parent="Env" instance=ExtResource("6_b48e7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -144, 0, -144)
 
-[node name="MegaFloor9" parent="Env" instance=ExtResource("2_can57")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -48)
+[node name="GigaFloor9" parent="Env" instance=ExtResource("6_b48e7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144, 0, -144)
+
+[node name="Shrines" type="Node3D" parent="Env"]
+
+[node name="ZathuShrine" parent="Env/Shrines" instance=ExtResource("4_v7tah")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0.1, 128)
+
+[node name="JaumShrine" parent="Env/Shrines" instance=ExtResource("5_1m2c6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0.1, -105)
+
+[node name="NahkiShrine" parent="Env/Shrines" instance=ExtResource("6_5mmrq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0.1, -128)
+
+[node name="QueenShrine" parent="Env/Shrines" instance=ExtResource("9_oxgml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 6.1, -1.54041)
+
+[node name="EnvironmentInitial" parent="Env/Shrines/QueenShrine" instance=ExtResource("8_adq2q")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.5, -6.1514, 1.54041)
+
+[node name="DeadBird" parent="." instance=ExtResource("8_afuge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3, 3)
+
+[node name="Knife" parent="." instance=ExtResource("7_j0k3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.99177, 3, -2.00745)
