@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dbeitcqkgyxws"]
 
 [ext_resource type="PackedScene" uid="uid://cpgdejxjfhkpn" path="res://models/creatures/KourWorkingFile.blend" id="1_b8dtu"]
-[ext_resource type="PackedScene" path="res://models/creatures/vision_cones.tscn" id="2_6x5ma"]
+[ext_resource type="PackedScene" uid="uid://bbk4ug6i8b14s" path="res://models/creatures/vision_cones.tscn" id="2_6x5ma"]
 [ext_resource type="Script" path="res://models/creatures/queenAI.gd" id="2_wi7x8"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bo3do"]
@@ -27,7 +27,6 @@ transform = Transform3D(1, -2.13163e-13, 0, -1.06581e-13, 1, 0, 1.20792e-13, 0, 
 
 [node name="Cone" parent="metarig/barrelSpine/Torso2/spine_012/Head/Vision" index="0" instance=ExtResource("2_6x5ma")]
 transform = Transform3D(-5, 4.29537e-06, -2.52094e-06, 7.54954e-07, -1.84792, -4.64599, -4.92294e-06, -4.64599, 1.84792, -1.54837e-06, 1.13827, 3.74892)
-visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="metarig/barrelSpine/Torso2/spine_012/Head/Vision" index="1"]
 transform = Transform3D(-5, 4.29537e-06, -2.52094e-06, 7.54954e-07, -1.84792, -4.64599, -4.92294e-06, -4.64599, 1.84792, -1.54837e-06, 1.13827, 3.74892)
@@ -106,5 +105,10 @@ visible = false
 visible = false
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="6"]
+
+[node name="VisionRaycast" type="RayCast3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 0.976971, -0.213371, 0, 0.213371, 0.976971, 0, 7.44099, 4.32144)
+target_position = Vector3(0, 0, -100)
+debug_shape_custom_color = Color(1, 0, 0, 1)
 
 [connection signal="timeout" from="VisionTimer" to="." method="_on_vision_timer_timeout"]

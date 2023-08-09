@@ -15,4 +15,16 @@ func _on_vision_timer_timeout():
 	if overlaps.size() > 0:
 		for overlap in overlaps:
 			if overlap.name == "Player":
-				print("I see you.")
+				var playerPosition = overlap.global_transform.origin
+				$VisionRaycast.look_at(playerPosition, Vector3.UP)
+				$VisionRaycast.force_raycast_update()
+				
+				if $VisionRaycast.is_colliding():
+					var collider = $VisionRaycast.get_collider()
+					
+					if collider.name == "Player":
+						$VisionRaycast.debug_shape_custom_color = Color(174, 0, 0)
+						print("I see you")
+					else:
+						$VisionRaycast.debug_shape_custom_color = Color(0, 255, 0)
+						print("I can't see you")

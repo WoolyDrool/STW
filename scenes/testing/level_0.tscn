@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://ct5br2utftc1l"]
+[gd_scene load_steps=16 format=3 uid="uid://ct5br2utftc1l"]
 
 [ext_resource type="PackedScene" uid="uid://buj0i2kl571cx" path="res://entities/player/player.tscn" id="2_lsily"]
-[ext_resource type="PackedScene" uid="uid://csp181xx00bxe" path="res://models/creatures/kour_working_file.tscn" id="3_rc1qt"]
+[ext_resource type="PackedScene" uid="uid://dbeitcqkgyxws" path="res://models/creatures/kour_working_file.tscn" id="3_rc1qt"]
 [ext_resource type="PackedScene" uid="uid://qxjmbuktix3a" path="res://entities/interactables/shrines/zathu_shrine.tscn" id="4_v7tah"]
 [ext_resource type="PackedScene" uid="uid://bicee8pq7lq0r" path="res://entities/interactables/shrines/jaum_shrine.tscn" id="5_1m2c6"]
 [ext_resource type="PackedScene" uid="uid://6g0skbalmllh" path="res://entities/interactables/shrines/nahki_shrine.tscn" id="6_5mmrq"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cxn7j37vt1m8x" path="res://environment/queen/Queen's Shrine.tscn" id="8_adq2q"]
 [ext_resource type="PackedScene" uid="uid://m33fuptpqwhi" path="res://entities/items/dead_bird.tscn" id="8_afuge"]
 [ext_resource type="PackedScene" uid="uid://ugdhhtuebmi5" path="res://entities/interactables/shrines/queen_shrine.tscn" id="9_oxgml"]
+[ext_resource type="PackedScene" uid="uid://cvaqn5y4qlor8" path="res://environment/debug shapes/box.tscn" id="11_8snex"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7mdv"]
 sky_top_color = Color(0.0352941, 0.0941176, 0.286275, 1)
@@ -35,10 +36,13 @@ fog_density = 0.0239
 fog_aerial_perspective = 0.491
 fog_sky_affect = 0.0
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jhpno"]
+points = PackedVector3Array(2.5, 2.5, 2.5, 2.5, 2.5, -2.5, -2.5, 2.5, 2.5, 2.5, -2.5, 2.5, 2.5, -2.5, -2.5, -2.5, 2.5, -2.5, -2.5, -2.5, 2.5, -2.5, -2.5, -2.5)
+
 [node name="level0" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_lsily")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -23.0001, 2.00557, 25.0006)
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 7.35365, 2.00557, -25.5405)
 
 [node name="KourWorkingFile" parent="." instance=ExtResource("3_rc1qt")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.0853, 0, -35.9326)
@@ -102,3 +106,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3, 3)
 
 [node name="Knife" parent="." instance=ExtResource("7_j0k3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.99177, 3, -2.00745)
+
+[node name="Box" parent="." instance=ExtResource("11_8snex")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.374275, 1.18457, -31.0462)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.374275, 0, -30.0151)
+shape = SubResource("ConvexPolygonShape3D_jhpno")

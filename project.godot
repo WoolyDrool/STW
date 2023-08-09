@@ -30,6 +30,10 @@ window/size/viewport_height=720
 
 project/assembly_name="Stw Master Proejct"
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [input]
 
 move_forward={
