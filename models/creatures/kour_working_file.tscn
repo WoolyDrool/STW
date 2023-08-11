@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbeitcqkgyxws"]
+[gd_scene load_steps=6 format=3 uid="uid://dbeitcqkgyxws"]
 
 [ext_resource type="PackedScene" uid="uid://cpgdejxjfhkpn" path="res://models/creatures/KourWorkingFile.blend" id="1_b8dtu"]
-[ext_resource type="PackedScene" uid="uid://bbk4ug6i8b14s" path="res://models/creatures/vision_cones.tscn" id="2_6x5ma"]
+[ext_resource type="PackedScene" path="res://models/creatures/vision_cones.tscn" id="2_6x5ma"]
 [ext_resource type="Script" path="res://models/creatures/queenAI.gd" id="2_wi7x8"]
+[ext_resource type="PackedScene" uid="uid://cyfi811xyve8e" path="res://systems/fsm/abstract_state_machine.tscn" id="4_ndx3r"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bo3do"]
 points = PackedVector3Array(-5.96046e-08, -1, 1, -0.195184, -1, 0.980619, 0.194988, -1, 0.980619, -5.96046e-08, 1, 0, -0.382733, -1, 0.923845, 0.382537, -1, 0.923845, -0.707126, -1, 0.70693, -0.555599, -1, 0.831441, 0.555403, -1, 0.831441, 0.70693, -1, 0.70693, 0.831441, -1, 0.555403, 0.923845, -1, 0.382537, 0.980618, -1, 0.194988, 1, -1, 0, 0.980618, -1, -0.195184, 0.923845, -1, -0.382733, 0.831441, -1, -0.555599, 0.70693, -1, -0.707126, 0.555403, -1, -0.831637, 0.382537, -1, -0.924041, 0.194988, -1, -0.980814, -5.96046e-08, -1, -1, -0.195184, -1, -0.980814, -0.382733, -1, -0.924041, -0.555599, -1, -0.831637, -0.707126, -1, -0.707126, -0.831637, -1, -0.555599, -0.924041, -1, -0.382733, -0.980814, -1, -0.195184, -1, -1, 0, -0.980814, -1, 0.194988, -0.924041, -1, 0.382537, -0.831637, -1, 0.555403)
@@ -110,5 +111,15 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 0.976971, -0.213371, 0, 0.213371, 0.976971, 0, 7.44099, 4.32144)
 target_position = Vector3(0, 0, -100)
 debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="AbstractStateMachine" parent="." index="8" instance=ExtResource("4_ndx3r")]
+
+[node name="Idle" type="Node" parent="AbstractStateMachine" index="0"]
+
+[node name="Patrol" type="Node" parent="AbstractStateMachine" index="1"]
+
+[node name="Chase" type="Node" parent="AbstractStateMachine" index="2"]
+
+[node name="Retreat" type="Node" parent="AbstractStateMachine" index="3"]
 
 [connection signal="timeout" from="VisionTimer" to="." method="_on_vision_timer_timeout"]
