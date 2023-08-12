@@ -33,7 +33,12 @@ func set_movement_target(move_target : Vector3):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if can_move && target != null:
+		set_target_position()
 	pass
+
+func set_target_position():
+	target_pos = target.global_position
 
 func _on_vision_timer_timeout():
 	if can_see:
