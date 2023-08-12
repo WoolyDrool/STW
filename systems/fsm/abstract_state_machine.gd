@@ -16,17 +16,20 @@ var previousState : AbstractState
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await owner.ready
-	for child in get_children():
-		child.machine = self
-	state.enter()
+	#await owner.ready
+	#for child in get_children():
+	#	child.machine = self
+	#state.enter()
+	pass
 
 func _unhandled_input(event: InputEvent) -> void:
-	state.handle_input(event)
+	if state:
+		state.handle_input(event)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	state.update(delta)
+	if state:
+		state.update(delta)
 
 func transition_to(target_state_name: String, msg: Dictionary = {}) -> void:
 	if not has_node(target_state_name):
