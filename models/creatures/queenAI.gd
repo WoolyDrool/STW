@@ -1,7 +1,15 @@
 extends Node3D
 
 class_name QueenAI
+
+@export var can_move = true
+
+@export var move_speed = 5
+@export var can_see_player = false
+
+# Internal variables
 @onready var visionCone = $metarig/barrelSpine/Torso2/spine_012/Head/Vision
+@onready var nav_agent = $NavigationAgent3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
