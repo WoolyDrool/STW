@@ -1,5 +1,6 @@
 extends Node3D
 
+class_name QueenAI
 @onready var visionCone = $metarig/barrelSpine/Torso2/spine_012/Head/Vision
 
 # Called when the node enters the scene tree for the first time.
