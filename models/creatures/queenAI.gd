@@ -58,7 +58,7 @@ func check_vision():
 					
 					if collider.name == "Player":
 						$VisionRaycast.debug_shape_custom_color = Color(174, 0, 0)
-						print("I see you")
+						asm.transition_to("Chase")
 					else:
 						$VisionRaycast.debug_shape_custom_color = Color(0, 255, 0)
 						print("Thats not the player")
