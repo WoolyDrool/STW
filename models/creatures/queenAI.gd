@@ -18,7 +18,18 @@ var target_pos = Vector3()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	# These values need to be adjusted for the actor's speed
+	# and the navigation layout.
+	nav_agent.path_desired_distance = 0.5
+	nav_agent.target_desired_distance = 0.5
+	
+	call_deferred("agent_setup")
+
+func agent_setup():
+	await get_tree().physics_frame
+	
+func set_movement_target(move_target : Vector3):
+	nav_agent.set_target_position(move_target)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
