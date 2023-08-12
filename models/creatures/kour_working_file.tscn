@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dbeitcqkgyxws"]
 
 [ext_resource type="PackedScene" uid="uid://cpgdejxjfhkpn" path="res://models/creatures/KourWorkingFile.blend" id="1_b8dtu"]
-[ext_resource type="PackedScene" uid="uid://bbk4ug6i8b14s" path="res://models/creatures/vision_cones.tscn" id="2_6x5ma"]
+[ext_resource type="PackedScene" path="res://models/creatures/vision_cones.tscn" id="2_6x5ma"]
 [ext_resource type="Script" path="res://models/creatures/queenAI.gd" id="2_wi7x8"]
 [ext_resource type="PackedScene" uid="uid://cyfi811xyve8e" path="res://systems/fsm/abstract_state_machine.tscn" id="4_ndx3r"]
 [ext_resource type="Script" path="res://systems/ai/states/estate_idle.gd" id="5_3e84a"]
