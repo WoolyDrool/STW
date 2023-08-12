@@ -6,7 +6,8 @@ func enter(_msg := {}) -> void:
 	print("Entered Chase State")
 	queen.can_move = true
 
-func physics_update(delta: float) -> void:
+# For some reason this isn't being called by the state machine
+func physics_update(_delta:float) -> void:
 	if queen.nav_agent.is_navigation_finished():
 		return
 
