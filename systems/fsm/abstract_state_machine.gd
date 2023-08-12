@@ -3,6 +3,10 @@ extends Node
 # Also stolen from GDQuest 
 # https://www.gdquest.com/tutorial/godot/design-patterns/finite-state-machine/
 
+# TODO
+# Add a queing system so multiple sates can execute in a set order
+# Add the ability to run two states at once if needed
+
 class_name AbstractStateMachine
 
 signal transitioned(state_name) # Good for them
