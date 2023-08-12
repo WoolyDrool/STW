@@ -11,6 +11,7 @@ class_name QueenAI
 # Internal variables
 @onready var visionCone = $metarig/barrelSpine/Torso2/spine_012/Head/Vision
 @onready var nav_agent = $NavigationAgent3D
+@onready var asm = $AbstractStateMachine
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
