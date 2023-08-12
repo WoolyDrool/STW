@@ -13,7 +13,7 @@ class_name QueenAI
 @onready var nav_agent = $NavigationAgent3D
 @onready var asm = $AbstractStateMachine
 var update_target_position = true
-var target = null
+@export var target : Node3D = null
 var target_pos = Vector3()
 
 # Called when the node enters the scene tree for the first time.
