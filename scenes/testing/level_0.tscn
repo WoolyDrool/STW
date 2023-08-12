@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://ct5br2utftc1l"]
+[gd_scene load_steps=16 format=3 uid="uid://ct5br2utftc1l"]
 
 [ext_resource type="PackedScene" uid="uid://buj0i2kl571cx" path="res://entities/player/player.tscn" id="2_lsily"]
+[ext_resource type="Environment" uid="uid://duunwkd4u212x" path="res://scenes/testing/worldenv_level0.tres" id="3_aqffw"]
 [ext_resource type="PackedScene" uid="uid://dbeitcqkgyxws" path="res://models/creatures/kour_working_file.tscn" id="3_rc1qt"]
 [ext_resource type="PackedScene" uid="uid://qxjmbuktix3a" path="res://entities/interactables/shrines/zathu_shrine.tscn" id="4_v7tah"]
 [ext_resource type="PackedScene" uid="uid://bicee8pq7lq0r" path="res://entities/interactables/shrines/jaum_shrine.tscn" id="5_1m2c6"]
@@ -13,30 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://cvaqn5y4qlor8" path="res://environment/debug shapes/box.tscn" id="11_8snex"]
 [ext_resource type="PackedScene" uid="uid://cvyybvlsqnn61" path="res://environment/setpieces/Restroom.blend" id="12_cw3gp"]
 [ext_resource type="PackedScene" uid="uid://d0kw4awn2cdpa" path="res://environment/queen/EnvironmentInitialNoBake.blend" id="13_v6adk"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7mdv"]
-sky_top_color = Color(0.0352941, 0.0941176, 0.286275, 1)
-sky_horizon_color = Color(0.0235294, 0.145098, 0.431373, 1)
-sky_curve = 0.0174943
-ground_bottom_color = Color(0, 0, 0, 1)
-ground_horizon_color = Color(0.0666667, 0.172549, 0.392157, 1)
-ground_curve = 0.0313835
-
-[sub_resource type="Sky" id="Sky_m5p4p"]
-sky_material = SubResource("ProceduralSkyMaterial_b7mdv")
-
-[sub_resource type="Environment" id="Environment_f5mwj"]
-background_mode = 2
-sky = SubResource("Sky_m5p4p")
-ambient_light_source = 3
-reflected_light_source = 2
-fog_enabled = true
-fog_light_color = Color(0.0470588, 0.0980392, 0.211765, 1)
-fog_light_energy = 1.66
-fog_sun_scatter = 0.05
-fog_density = 0.0239
-fog_aerial_perspective = 0.491
-fog_sky_affect = 0.0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3qsmu"]
 points = PackedVector3Array(2.5, 2.5, 2.5, 2.5, 2.5, -2.5, -2.5, 2.5, 2.5, 2.5, -2.5, 2.5, 2.5, -2.5, -2.5, -2.5, 2.5, -2.5, -2.5, -2.5, 2.5, -2.5, -2.5, -2.5)
@@ -52,7 +29,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.0853, 0, -35.9326)
 [node name="Env" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Env"]
-environment = SubResource("Environment_f5mwj")
+environment = ExtResource("3_aqffw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
