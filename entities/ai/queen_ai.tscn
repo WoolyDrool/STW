@@ -36,6 +36,7 @@ script = ExtResource("4_h4hi8")
 script = ExtResource("5_n3slv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 shape = SubResource("BoxShape3D_048qr")
 
 [node name="KourWorkingFile" parent="." instance=ExtResource("5_8m531")]
@@ -46,3 +47,6 @@ transform = Transform3D(1, -2.13163e-13, 0, -1.60777e-13, 0.707107, -0.707107, 1
 [node name="Cone" parent="Vision" instance=ExtResource("2_iuau5")]
 transform = Transform3D(-5, 4.29537e-06, -2.52094e-06, 7.54954e-07, -1.84792, -4.64599, -4.92294e-06, -4.64599, 1.84792, -1.54837e-06, 1.13827, 3.74892)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Vision"]
+transform = Transform3D(-5, 4.29537e-06, -2.52094e-06, 7.54954e-07, -1.84792, -4.64599, -4.92294e-06, -4.64599, 1.84792, -1.54837e-06, 1.13827, 3.74892)
+shape = SubResource("ConvexPolygonShape3D_wws5p")
