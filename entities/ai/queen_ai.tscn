@@ -31,9 +31,11 @@ initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="AbstractStateMachine"]
 script = ExtResource("4_h4hi8")
+StateName = "Idle"
 
 [node name="Chase" type="Node" parent="AbstractStateMachine"]
 script = ExtResource("5_n3slv")
+StateName = "Chase"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
