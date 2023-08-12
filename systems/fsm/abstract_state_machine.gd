@@ -36,6 +36,10 @@ func transition_to(target_state_name: String, msg: Dictionary = {}) -> void:
 	if not has_node(target_state_name):
 		return
 	
+	# If already in the requested state, do nothing
+	if state.StateName == target_state_name:
+		return
+	
 	state.exit()
 	state = get_node(target_state_name)
 	state.enter(msg)
