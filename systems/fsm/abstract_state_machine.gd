@@ -16,11 +16,12 @@ var previousState : AbstractState
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#await owner.ready
-	#for child in get_children():
-	#	child.machine = self
-	#state.enter()
-	pass
+	await owner.ready
+	for child in get_children():
+		if child.has_method("enter"):
+			child.machine = self
+	if state:		
+		state.enter()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if state:
