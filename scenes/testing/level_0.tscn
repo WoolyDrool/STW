@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ct5br2utftc1l"]
+[gd_scene load_steps=17 format=3 uid="uid://ct5br2utftc1l"]
 
 [ext_resource type="PackedScene" uid="uid://buj0i2kl571cx" path="res://entities/player/player.tscn" id="2_lsily"]
 [ext_resource type="PackedScene" uid="uid://dbeitcqkgyxws" path="res://models/creatures/kour_working_file.tscn" id="3_rc1qt"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://m33fuptpqwhi" path="res://entities/items/dead_bird.tscn" id="8_afuge"]
 [ext_resource type="PackedScene" uid="uid://ugdhhtuebmi5" path="res://entities/interactables/shrines/queen_shrine.tscn" id="9_oxgml"]
 [ext_resource type="PackedScene" uid="uid://cvaqn5y4qlor8" path="res://environment/debug shapes/box.tscn" id="11_8snex"]
+[ext_resource type="PackedScene" uid="uid://cvyybvlsqnn61" path="res://environment/setpieces/Restroom.blend" id="12_cw3gp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7mdv"]
 sky_top_color = Color(0.0352941, 0.0941176, 0.286275, 1)
@@ -113,3 +114,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.374275, 1.18457, -31
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.374275, 0, -30.0151)
 shape = SubResource("ConvexPolygonShape3D_jhpno")
+
+[node name="Restroom" parent="." instance=ExtResource("12_cw3gp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.169, 0, 49.0568)
