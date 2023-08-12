@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 class_name QueenAI
 
-@export var can_move = true
+@export var can_move = false
 @export var can_see = true
 
 @export var move_speed = 5

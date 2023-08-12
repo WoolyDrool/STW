@@ -4,6 +4,7 @@ extends EnemyState
 
 func enter(_msg := {}) -> void:
 	print("Entered Chase State")
+	queen.can_move = true
 
 func physics_update(delta: float) -> void:
 	if queen.nav_agent.is_navigation_finished():
