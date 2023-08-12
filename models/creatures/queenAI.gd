@@ -42,7 +42,7 @@ func _physics_process(delta):
 		move_and_slide()
 
 func set_target_position():
-	target_pos = target.global_position
+	target_pos = target.position
 
 func _on_vision_timer_timeout():
 	if can_see:
