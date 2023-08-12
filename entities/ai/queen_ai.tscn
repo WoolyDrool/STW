@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://ccyo3a8r1grlu"]
 
-[ext_resource type="Script" path="res://models/creatures/queenAI.gd" id="1_5eha1"]
+[ext_resource type="Script" path="res://systems/ai/ai_queen.gd" id="1_dff55"]
 [ext_resource type="PackedScene" path="res://models/creatures/vision_cones.tscn" id="2_iuau5"]
 [ext_resource type="PackedScene" uid="uid://cyfi811xyve8e" path="res://systems/fsm/abstract_state_machine.tscn" id="3_m2cxo"]
+[ext_resource type="Script" path="res://systems/ai/states/estate_chase.gd" id="4_d51ly"]
 [ext_resource type="Script" path="res://systems/ai/states/estate_idle.gd" id="4_h4hi8"]
 [ext_resource type="PackedScene" uid="uid://dbeitcqkgyxws" path="res://models/creatures/kour_working_file.tscn" id="5_8m531"]
-[ext_resource type="Script" path="res://models/creatures/estate_chase.gd" id="5_n3slv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_048qr"]
 size = Vector3(4, 8, 8)
@@ -14,7 +14,7 @@ size = Vector3(4, 8, 8)
 points = PackedVector3Array(-5.96046e-08, -1, 1, -0.195184, -1, 0.980619, 0.194988, -1, 0.980619, -5.96046e-08, 1, 0, -0.382733, -1, 0.923845, 0.382537, -1, 0.923845, -0.707126, -1, 0.70693, -0.555599, -1, 0.831441, 0.555403, -1, 0.831441, 0.70693, -1, 0.70693, 0.831441, -1, 0.555403, 0.923845, -1, 0.382537, 0.980618, -1, 0.194988, 1, -1, 0, 0.980618, -1, -0.195184, 0.923845, -1, -0.382733, 0.831441, -1, -0.555599, 0.70693, -1, -0.707126, 0.555403, -1, -0.831637, 0.382537, -1, -0.924041, 0.194988, -1, -0.980814, -5.96046e-08, -1, -1, -0.195184, -1, -0.980814, -0.382733, -1, -0.924041, -0.555599, -1, -0.831637, -0.707126, -1, -0.707126, -0.831637, -1, -0.555599, -0.924041, -1, -0.382733, -0.980814, -1, -0.195184, -1, -1, 0, -0.980814, -1, 0.194988, -0.924041, -1, 0.382537, -0.831637, -1, 0.555403)
 
 [node name="QueenAI" type="CharacterBody3D"]
-script = ExtResource("1_5eha1")
+script = ExtResource("1_dff55")
 
 [node name="VisionTimer" type="Timer" parent="."]
 autostart = true
@@ -34,7 +34,7 @@ script = ExtResource("4_h4hi8")
 StateName = "Idle"
 
 [node name="Chase" type="Node" parent="AbstractStateMachine"]
-script = ExtResource("5_n3slv")
+script = ExtResource("4_d51ly")
 StateName = "Chase"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
