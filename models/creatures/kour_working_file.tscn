@@ -1,20 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbeitcqkgyxws"]
+[gd_scene load_steps=5 format=3 uid="uid://dbeitcqkgyxws"]
 
 [ext_resource type="PackedScene" uid="uid://cpgdejxjfhkpn" path="res://models/creatures/KourWorkingFile.blend" id="1_b8dtu"]
 [ext_resource type="PackedScene" path="res://models/creatures/vision_cones.tscn" id="2_6x5ma"]
 [ext_resource type="Script" path="res://models/creatures/queenAI.gd" id="2_wi7x8"]
-[ext_resource type="PackedScene" uid="uid://cyfi811xyve8e" path="res://systems/fsm/abstract_state_machine.tscn" id="4_ndx3r"]
-[ext_resource type="Script" path="res://systems/ai/states/estate_idle.gd" id="5_3e84a"]
-[ext_resource type="Script" path="res://models/creatures/estate_chase.gd" id="6_v10jp"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bo3do"]
 points = PackedVector3Array(-5.96046e-08, -1, 1, -0.195184, -1, 0.980619, 0.194988, -1, 0.980619, -5.96046e-08, 1, 0, -0.382733, -1, 0.923845, 0.382537, -1, 0.923845, -0.707126, -1, 0.70693, -0.555599, -1, 0.831441, 0.555403, -1, 0.831441, 0.70693, -1, 0.70693, 0.831441, -1, 0.555403, 0.923845, -1, 0.382537, 0.980618, -1, 0.194988, 1, -1, 0, 0.980618, -1, -0.195184, 0.923845, -1, -0.382733, 0.831441, -1, -0.555599, 0.70693, -1, -0.707126, 0.555403, -1, -0.831637, 0.382537, -1, -0.924041, 0.194988, -1, -0.980814, -5.96046e-08, -1, -1, -0.195184, -1, -0.980814, -0.382733, -1, -0.924041, -0.555599, -1, -0.831637, -0.707126, -1, -0.707126, -0.831637, -1, -0.555599, -0.924041, -1, -0.382733, -0.980814, -1, -0.195184, -1, -1, 0, -0.980814, -1, 0.194988, -0.924041, -1, 0.382537, -0.831637, -1, 0.555403)
 
 [node name="KourWorkingFile" instance=ExtResource("1_b8dtu")]
 script = ExtResource("2_wi7x8")
-
-[node name="VisionTimer" type="Timer" parent="." index="0"]
-autostart = true
 
 [node name="tail" parent="metarig/barrelSpine" index="0"]
 transform = Transform3D(1, 2.85063e-07, 2.25497e-06, -1.48249e-07, -0.981811, 0.189857, 2.2681e-06, -0.189858, -0.981805, -4.40536e-13, -5.96046e-07, 1.78814e-07)
@@ -98,29 +92,11 @@ transform = Transform3D(1, -5.6117e-08, 2.3172e-07, 1.60073e-10, 0.972063, 0.234
 [node name="r_toe_R" parent="metarig/barrelSpine/thigh_R/foot_R/r_pastern_R" index="0"]
 transform = Transform3D(1, -7.70948e-15, 1.19371e-14, 3.7892e-18, 0.84018, 0.542307, -1.42102e-14, -0.542307, 0.84018, 4.09672e-14, 0.441136, -7.45682e-08)
 
-[node name="Plane" parent="." index="2"]
+[node name="Plane" parent="." index="1"]
 visible = false
 
-[node name="Shields" parent="." index="3"]
+[node name="Shields" parent="." index="2"]
 visible = false
 
-[node name="Sword" parent="." index="4"]
+[node name="Sword" parent="." index="3"]
 visible = false
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="6"]
-
-[node name="VisionRaycast" type="RayCast3D" parent="." index="7"]
-transform = Transform3D(1, 0, 0, 0, 0.976971, -0.213371, 0, 0.213371, 0.976971, 0, 7.44099, 4.32144)
-target_position = Vector3(0, 0, -100)
-debug_shape_custom_color = Color(1, 0, 0, 1)
-
-[node name="AbstractStateMachine" parent="." index="8" instance=ExtResource("4_ndx3r")]
-initial_state = NodePath("Idle")
-
-[node name="Idle" type="Node" parent="AbstractStateMachine" index="0"]
-script = ExtResource("5_3e84a")
-
-[node name="Chase" type="Node" parent="AbstractStateMachine" index="1"]
-script = ExtResource("6_v10jp")
-
-[connection signal="timeout" from="VisionTimer" to="." method="_on_vision_timer_timeout"]
