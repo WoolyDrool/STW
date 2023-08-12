@@ -12,6 +12,9 @@ class_name QueenAI
 @onready var visionCone = $metarig/barrelSpine/Torso2/spine_012/Head/Vision
 @onready var nav_agent = $NavigationAgent3D
 @onready var asm = $AbstractStateMachine
+var update_target_position = true
+var target = null
+var target_pos = Vector3()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
