@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddf1uuw3p30a6"]
+[gd_scene load_steps=6 format=3 uid="uid://ddf1uuw3p30a6"]
 
 [ext_resource type="PackedScene" uid="uid://bsc8oke8kg64n" path="res://environment/mega_floor.tscn" id="2_whiyw"]
 [ext_resource type="PackedScene" uid="uid://buj0i2kl571cx" path="res://entities/player/player.tscn" id="3_chepr"]
 [ext_resource type="PackedScene" uid="uid://ccyo3a8r1grlu" path="res://entities/ai/queen_ai.tscn" id="3_pm1u5"]
+[ext_resource type="Environment" uid="uid://duunwkd4u212x" path="res://scenes/testing/worldenv_level0.tres" id="4_n802b"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_sobwr"]
 vertices = PackedVector3Array(-23.5, 0.5, 11.75, -23.5, 0.5, 23.5, -11.75, 0.5, 23.5, 11.75, 0.5, 23.5, 23.5, 0.5, 23.5, 23.5, 0.5, 11.75, 23.5, 0.5, -11.75, 23.5, 0.5, -23.5, 11.75, 0.5, -23.5, -11.75, 0.5, -23.5, -23.5, 0.5, -23.5, -23.5, 0.5, -11.75, -23.5, 0.5, 0, -23.5, 0.5, 11.75, -11.75, 0.5, 23.5, 0, 0.5, 23.5, 11.75, 0.5, 23.5, 23.5, 0.5, 11.75, 23.5, 0.5, 0, 23.5, 0.5, -11.75, 11.75, 0.5, -23.5, 0, 0.5, -23.5, 0, 0.5, -23.5, -11.75, 0.5, -23.5, -23.5, 0.5, -11.75, -23.5, 0.5, 0, 23.5, 0.5, 0, 0, 0.5, -23.5, -23.5, 0.5, 0, -11.75, 0.5, 23.5, 0, 0.5, 23.5, 23.5, 0.5, 11.75)
@@ -22,3 +23,10 @@ navigation_mesh = SubResource("NavigationMesh_sobwr")
 [node name="QueenAI" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_pm1u5")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -8)
 target = NodePath("../Player")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("4_n802b")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, -0.5, 0.866025, 0, -0.866025, -0.5, 0, 0, 0)
+shadow_enabled = true
