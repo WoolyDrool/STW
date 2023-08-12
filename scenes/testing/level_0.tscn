@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ct5br2utftc1l"]
+[gd_scene load_steps=18 format=3 uid="uid://ct5br2utftc1l"]
 
 [ext_resource type="PackedScene" uid="uid://buj0i2kl571cx" path="res://entities/player/player.tscn" id="2_lsily"]
 [ext_resource type="PackedScene" uid="uid://dbeitcqkgyxws" path="res://models/creatures/kour_working_file.tscn" id="3_rc1qt"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ugdhhtuebmi5" path="res://entities/interactables/shrines/queen_shrine.tscn" id="9_oxgml"]
 [ext_resource type="PackedScene" uid="uid://cvaqn5y4qlor8" path="res://environment/debug shapes/box.tscn" id="11_8snex"]
 [ext_resource type="PackedScene" uid="uid://cvyybvlsqnn61" path="res://environment/setpieces/Restroom.blend" id="12_cw3gp"]
+[ext_resource type="PackedScene" uid="uid://d0kw4awn2cdpa" path="res://environment/queen/EnvironmentInitialNoBake.blend" id="13_v6adk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7mdv"]
 sky_top_color = Color(0.0352941, 0.0941176, 0.286275, 1)
@@ -116,3 +117,6 @@ shape = SubResource("ConvexPolygonShape3D_3qsmu")
 
 [node name="Restroom" parent="." instance=ExtResource("12_cw3gp")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 123.169, 0.1, 49.057)
+
+[node name="EnvironmentInitialNoBake" parent="." instance=ExtResource("13_v6adk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.651, 0.1, 30.491)
