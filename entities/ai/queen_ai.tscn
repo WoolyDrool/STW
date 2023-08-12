@@ -50,3 +50,5 @@ transform = Transform3D(-5, 4.29537e-06, -2.52094e-06, 7.54954e-07, -1.84792, -4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Vision"]
 transform = Transform3D(-5, 4.29537e-06, -2.52094e-06, 7.54954e-07, -1.84792, -4.64599, -4.92294e-06, -4.64599, 1.84792, -1.54837e-06, 1.13827, 3.74892)
 shape = SubResource("ConvexPolygonShape3D_wws5p")
+
+[connection signal="timeout" from="VisionTimer" to="." method="_on_vision_timer_timeout"]
