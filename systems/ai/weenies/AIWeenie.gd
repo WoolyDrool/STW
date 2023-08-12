@@ -4,7 +4,8 @@ extends Node
 # I'm calling them weenies cause I remember this being a term for P.O.I in levels like towers/objectives
 # And its funny
 
-# I am writing the following code with no idea if any of it will actually be used, more sketching out the idea of what it needs
+# I am writing the following code with no idea if any of it will actually be used, 
+# more sketching out the idea of what it needs
 
 signal make_self_known # Ping itself to Kour for whatever reason
 signal i_am_important # A higher priority version of make_self_known
