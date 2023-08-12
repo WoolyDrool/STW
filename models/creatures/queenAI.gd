@@ -9,7 +9,7 @@ class_name QueenAI
 @export var can_see_player = false
 
 # Internal variables
-@onready var visionCone = $metarig/barrelSpine/Torso2/spine_012/Head/Vision
+@onready var visionCone = $Vision
 @onready var nav_agent = $NavigationAgent3D
 @onready var asm = $AbstractStateMachine
 var update_target_position = true
