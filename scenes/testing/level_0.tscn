@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ct5br2utftc1l"]
+[gd_scene load_steps=17 format=3 uid="uid://ct5br2utftc1l"]
 
 [ext_resource type="PackedScene" uid="uid://buj0i2kl571cx" path="res://entities/player/player.tscn" id="2_lsily"]
 [ext_resource type="PackedScene" uid="uid://dbeitcqkgyxws" path="res://models/creatures/kour_working_file.tscn" id="3_rc1qt"]
@@ -7,12 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://6g0skbalmllh" path="res://entities/interactables/shrines/nahki_shrine.tscn" id="6_5mmrq"]
 [ext_resource type="PackedScene" uid="uid://b2pycx4jyy83o" path="res://environment/giga_floor.tscn" id="6_b48e7"]
 [ext_resource type="PackedScene" uid="uid://dcqhohjnnnfhe" path="res://entities/items/knife.tscn" id="7_j0k3n"]
-[ext_resource type="PackedScene" uid="uid://cxn7j37vt1m8x" path="res://environment/queen/Queen's Shrine.tscn" id="8_adq2q"]
 [ext_resource type="PackedScene" uid="uid://m33fuptpqwhi" path="res://entities/items/dead_bird.tscn" id="8_afuge"]
+[ext_resource type="PackedScene" uid="uid://bjr4bsqpgmfxg" path="res://environment/queen/environment_initial_no_bake.tscn" id="8_xhqyq"]
 [ext_resource type="PackedScene" uid="uid://ugdhhtuebmi5" path="res://entities/interactables/shrines/queen_shrine.tscn" id="9_oxgml"]
 [ext_resource type="PackedScene" uid="uid://cvaqn5y4qlor8" path="res://environment/debug shapes/box.tscn" id="11_8snex"]
 [ext_resource type="PackedScene" uid="uid://cvyybvlsqnn61" path="res://environment/setpieces/Restroom.blend" id="12_cw3gp"]
-[ext_resource type="PackedScene" uid="uid://d0kw4awn2cdpa" path="res://environment/queen/EnvironmentInitialNoBake.blend" id="13_v6adk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7mdv"]
 sky_top_color = Color(0.0352941, 0.0941176, 0.286275, 1)
@@ -100,8 +99,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0.1, -128)
 [node name="QueenShrine" parent="Env/Shrines" instance=ExtResource("9_oxgml")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 6.1, -1.54041)
 
-[node name="EnvironmentInitial" parent="Env/Shrines/QueenShrine" instance=ExtResource("8_adq2q")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.5, -6.1514, 1.54041)
+[node name="EnvironmentInitialNoBake" parent="Env/Shrines/QueenShrine" instance=ExtResource("8_xhqyq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.00002, 0)
 
 [node name="DeadBird" parent="." instance=ExtResource("8_afuge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3, 3)
@@ -116,7 +115,4 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.374275, 1.18457, -31
 shape = SubResource("ConvexPolygonShape3D_3qsmu")
 
 [node name="Restroom" parent="." instance=ExtResource("12_cw3gp")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 123.169, 0.1, 49.057)
-
-[node name="EnvironmentInitialNoBake" parent="." instance=ExtResource("13_v6adk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.651, 0.1, 30.491)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -46.4149, 0.1, 100.98)
