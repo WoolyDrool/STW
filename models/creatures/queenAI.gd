@@ -37,6 +37,10 @@ func _process(delta):
 		set_target_position()
 	pass
 
+func _physics_process(delta):
+	if can_move:
+		move_and_slide()
+
 func set_target_position():
 	target_pos = target.global_position
 
