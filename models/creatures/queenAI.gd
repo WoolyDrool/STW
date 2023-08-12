@@ -45,4 +45,4 @@ func check_vision():
 						print("I see you")
 					else:
 						$VisionRaycast.debug_shape_custom_color = Color(0, 255, 0)
-						print("I can't see you")
+						print("Thats not the player")
