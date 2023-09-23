@@ -1,10 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccyo3a8r1grlu"]
+[gd_scene load_steps=6 format=3 uid="uid://ccyo3a8r1grlu"]
 
 [ext_resource type="Script" path="res://systems/ai/ai_queen.gd" id="1_dff55"]
 [ext_resource type="PackedScene" path="res://models/creatures/vision_cones.tscn" id="2_iuau5"]
-[ext_resource type="PackedScene" uid="uid://cyfi811xyve8e" path="res://systems/fsm/abstract_state_machine.tscn" id="3_m2cxo"]
-[ext_resource type="Script" path="res://systems/ai/states/estate_chase.gd" id="4_d51ly"]
-[ext_resource type="Script" path="res://systems/ai/states/estate_idle.gd" id="4_h4hi8"]
 [ext_resource type="PackedScene" uid="uid://dbeitcqkgyxws" path="res://models/creatures/kour_working_file.tscn" id="5_8m531"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_048qr"]
@@ -15,6 +12,7 @@ points = PackedVector3Array(-5.96046e-08, -1, 1, -0.195184, -1, 0.980619, 0.1949
 
 [node name="QueenAI" type="CharacterBody3D"]
 script = ExtResource("1_dff55")
+can_move = true
 
 [node name="VisionTimer" type="Timer" parent="."]
 autostart = true
@@ -25,17 +23,6 @@ autostart = true
 transform = Transform3D(1, 0, 0, 0, 0.976971, -0.213371, 0, 0.213371, 0.976971, 0, 7.44099, 4.32144)
 target_position = Vector3(0, 0, -100)
 debug_shape_custom_color = Color(1, 0, 0, 1)
-
-[node name="AbstractStateMachine" parent="." instance=ExtResource("3_m2cxo")]
-initial_state = NodePath("Idle")
-
-[node name="Idle" type="Node" parent="AbstractStateMachine"]
-script = ExtResource("4_h4hi8")
-StateName = "Idle"
-
-[node name="Chase" type="Node" parent="AbstractStateMachine"]
-script = ExtResource("4_d51ly")
-StateName = "Chase"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
