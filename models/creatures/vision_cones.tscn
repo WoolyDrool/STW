@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbk4ug6i8b14s"]
+[gd_scene load_steps=4 format=3 uid="uid://djb46p4eba641"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grrld"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.380392)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fq64r"]
 _surfaces = [{
