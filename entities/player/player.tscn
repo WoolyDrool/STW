@@ -75,7 +75,7 @@ _data = {
 
 [sub_resource type="AnimationRootNode" id="AnimationRootNode_hwi3p"]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "rotation_helper")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "rotation_helper") groups=["Player"]]
 collision_mask = 35
 script = ExtResource("1_m01v4")
 MAX_SPEED = 7
