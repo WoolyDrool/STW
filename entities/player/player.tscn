@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://buj0i2kl571cx"]
+[gd_scene load_steps=14 format=3 uid="uid://buj0i2kl571cx"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_m01v4"]
 [ext_resource type="Script" path="res://entities/player/player_camera.gd" id="2_ecwpp"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dlp2maf4rcvvp" path="res://media/Sprites/UI/Overlays/spr_UI_crosshair.png" id="4_jky7m"]
 [ext_resource type="Script" path="res://entities/player/player_inventory.gd" id="5_2148u"]
 [ext_resource type="PackedScene" uid="uid://dlbvn700ekh7c" path="res://entities/tools/tool_hatchet.tscn" id="7_bfvat"]
-[ext_resource type="PackedScene" uid="uid://cyfi811xyve8e" path="res://systems/fsm/abstract_state_machine.tscn" id="9_xq7cf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2muic"]
 
@@ -239,13 +238,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 light_color = Color(0.788235, 1, 0.8, 1)
 light_energy = 0.412
 omni_range = 3.5
-
-[node name="AbstractStateMachine" parent="." instance=ExtResource("9_xq7cf")]
-
-[node name="Idle" type="Node" parent="AbstractStateMachine"]
-
-[node name="Walk" type="Node" parent="AbstractStateMachine"]
-
-[node name="Run" type="Node" parent="AbstractStateMachine"]
-
-[node name="Jump" type="Node" parent="AbstractStateMachine"]
