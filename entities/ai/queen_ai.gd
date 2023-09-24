@@ -31,8 +31,11 @@ func handle_agent_funcs(delta):
 	nav_agent.target_position = target.global_position
 	
 	# bad way of doing this but its for debug purposes
-	look_at(target.global_position, Vector3.UP, true)
+	look_at(nav_agent.get_next_path_position(), Vector3.UP, true)
 	
+	move_to_next(delta)
+	
+func move_to_next(delta):
 	if nav_agent.is_target_reachable() and not nav_agent.is_target_reached():
 		var direction = nav_agent.get_next_path_position() - global_position
 		direction = direction.normalized()
@@ -40,7 +43,6 @@ func handle_agent_funcs(delta):
 		velocity = velocity.lerp(direction * move_speed, move_accel * delta)
 		
 		move_and_slide()
-
 
 func _on_vision_timer_timeout():
 	if can_see:
