@@ -11,6 +11,10 @@ class_name QueenAI
 @export var can_see_player = false
 @export var target : Node3D = null
 
+@export var using_path : bool = false
+@export var current_path : AIPath
+@export var queen_path_index : int
+
 # Internal variables
 @onready var visionCone = $Vision
 @onready var visionCast = $VisionRaycast
@@ -19,31 +23,48 @@ class_name QueenAI
 var update_target_position = true
 var target_pos = Vector3()
 
-# Called when the node enters the scene tree for the first time.
+# Initialization ////
+
 func _ready():
 	nav_agent.max_speed = move_speed
+	
+	# temp
+	if using_path:
+		begin_using_path()
 
 func _physics_process(delta):
-	if target && can_move:
+	if can_move:
 		handle_agent_funcs(delta)
-	
+
+func begin_using_path():
+	current_path.ai_path_update_next.connect(receive_next_path_pos)
+	print(current_path)
+
+# Main ////
+
 func handle_agent_funcs(delta):
-	nav_agent.target_position = target.global_position
-	
-	# bad way of doing this but its for debug purposes
-	look_at(nav_agent.get_next_path_position(), Vector3.UP, true)
-	
-	move_to_next(delta)
-	
-func move_to_next(delta):
+	if using_path:
+		nav_agent.target_position = target_pos	
+		# bad way of doing this but its for debug purposes
+		look_at(nav_agent.get_next_path_position(), Vector3.UP, true)
+	else:
+		if target: 
+			nav_agent.target_position = target.global_position
+			
 	if nav_agent.is_target_reachable() and not nav_agent.is_target_reached():
 		var direction = nav_agent.get_next_path_position() - global_position
 		direction = direction.normalized()
 		
 		velocity = velocity.lerp(direction * move_speed, move_accel * delta)
 		
-		move_and_slide()
+		move_and_slide()		
+	
+func receive_next_path_pos(new_pos : Vector3):
+	target_pos = new_pos
+	print(target_pos)
 
+
+# Vision ////
 func _on_vision_timer_timeout():
 	if can_see:
 		check_vision()
@@ -58,13 +79,7 @@ func check_vision():
 				visionCast.force_raycast_update()
 				
 				var collider = visionCast.get_collider()
-				
-				# terrible way of doing this, for debug only
-				#visionCone.get_child(0).material.albedo_color = Color(174, 0, 0, 23)
-				#visionCast.debug_shape_custom_color = 
+				visionCast.debug_shape_custom_color =  Color(174, 0, 0, 23)
 				target = collider as Node3D
 			else:
-				pass
-				# terrible way of doing this, for debug only
-				#visionCone.get_child(0).material.albedo_color = Color(0, 255, 0, 23)
-				#visionCast.debug_shape_custom_color = Color(0, 255, 0, 23)
+				visionCast.debug_shape_custom_color = Color(0, 255, 0, 23)

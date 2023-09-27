@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddf1uuw3p30a6"]
+[gd_scene load_steps=9 format=3 uid="uid://ddf1uuw3p30a6"]
 
+[ext_resource type="PackedScene" uid="uid://caorqsw3p7ocr" path="res://entities/ai/ai_path.tscn" id="2_gxxs8"]
 [ext_resource type="PackedScene" uid="uid://bsc8oke8kg64n" path="res://environment/mega_floor.tscn" id="2_whiyw"]
+[ext_resource type="PackedScene" uid="uid://c0idpjy5qdvnf" path="res://entities/ai/ai_path_node.tscn" id="3_admam"]
 [ext_resource type="PackedScene" uid="uid://buj0i2kl571cx" path="res://entities/player/player.tscn" id="3_chepr"]
 [ext_resource type="PackedScene" uid="uid://ccyo3a8r1grlu" path="res://entities/ai/queen_ai.tscn" id="3_pm1u5"]
 [ext_resource type="Environment" uid="uid://duunwkd4u212x" path="res://scenes/testing/worldenv_level0.tres" id="4_n802b"]
@@ -17,11 +19,36 @@ size = Vector3(4, 4, 4)
 [node name="level0_AI_testing" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("3_chepr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, 22)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 1, -16)
 
-[node name="QueenAI" parent="." instance=ExtResource("3_pm1u5")]
-transform = Transform3D(0.25, 0, 0.433013, 0, 0.5, 0, -0.433013, 0, 0.25, -13, 0, -15)
-move_speed = 2.5
+[node name="AI Path" parent="." instance=ExtResource("2_gxxs8")]
+
+[node name="PathNode" parent="AI Path" instance=ExtResource("3_admam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -16)
+first = true
+
+[node name="PathNode2" parent="AI Path" instance=ExtResource("3_admam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -16)
+
+[node name="PathNode3" parent="AI Path" instance=ExtResource("3_admam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -16)
+
+[node name="PathNode4" parent="AI Path" instance=ExtResource("3_admam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -8)
+
+[node name="PathNode5" parent="AI Path" instance=ExtResource("3_admam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="PathNode6" parent="AI Path" instance=ExtResource("3_admam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -8)
+last = true
+
+[node name="QueenAI" parent="." node_paths=PackedStringArray("target", "current_path") instance=ExtResource("3_pm1u5")]
+transform = Transform3D(-1.49012e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, -1.49012e-07, -9, 0, -16)
+move_speed = 6.0
+target = NodePath("../Player")
+using_path = true
+current_path = NodePath("../AI Path")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("4_n802b")
