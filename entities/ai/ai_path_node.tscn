@@ -4,12 +4,11 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t7q7m"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00bd1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjlbd"]
 transparency = 1
-albedo_color = Color(1, 0, 0, 0.34902)
+albedo_color = Color(1, 0, 0, 0.627451)
 
-[sub_resource type="BoxMesh" id="BoxMesh_pa56u"]
-material = SubResource("StandardMaterial3D_00bd1")
+[sub_resource type="PrismMesh" id="PrismMesh_gnqip"]
 
 [node name="PathNode" type="Area3D" groups=["AIPathNodes"]]
 script = ExtResource("1_kh68v")
@@ -19,7 +18,8 @@ shape = SubResource("BoxShape3D_t7q7m")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
 layers = 524288
-mesh = SubResource("BoxMesh_pa56u")
+material_override = SubResource("StandardMaterial3D_jjlbd")
+mesh = SubResource("PrismMesh_gnqip")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
