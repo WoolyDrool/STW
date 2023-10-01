@@ -1,79 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://buj0i2kl571cx"]
+[gd_scene load_steps=9 format=3 uid="uid://buj0i2kl571cx"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_m01v4"]
 [ext_resource type="Script" path="res://entities/player/player_camera.gd" id="2_ecwpp"]
 [ext_resource type="PackedScene" uid="uid://cfuum0m1fdiet" path="res://ui/main_ui.tscn" id="2_xevq3"]
 [ext_resource type="Script" path="res://entities/player/CameraHolder.gd" id="2_yuupq"]
 [ext_resource type="FontFile" uid="uid://d1o6kv64g121o" path="res://media/Fonts/coolvetica condensed rg.ttf" id="3_vr1kv"]
-[ext_resource type="Texture2D" uid="uid://dlp2maf4rcvvp" path="res://media/Sprites/UI/Overlays/spr_UI_crosshair.png" id="4_jky7m"]
 [ext_resource type="Script" path="res://entities/player/player_inventory.gd" id="5_2148u"]
-[ext_resource type="PackedScene" uid="uid://dlbvn700ekh7c" path="res://entities/tools/tool_hatchet.tscn" id="7_bfvat"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2muic"]
 
-[sub_resource type="Animation" id="Animation_fuksy"]
-resource_name = "anim_leftSwing_1"
-length = 0.35
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../LeftHand:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-1, -0.6, -1), Vector3(3.72529e-08, -0.6, -2.1), Vector3(3.72529e-08, -0.6, -2.1), Vector3(-1, -0.6, -1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../LeftHand:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_a8l3l"]
-resource_name = "anim_rightSwing_1"
-length = 0.35
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0512961, 0.142723, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1, -0.6, -1), Vector3(0, -0.6, -1.9), Vector3(0, -0.6, -1.9), Vector3(1, -0.6, -1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0512961, 0.142723, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1xldh"]
-_data = {
-"anim_leftSwing_1": SubResource("Animation_fuksy"),
-"anim_rightSwing_1": SubResource("Animation_a8l3l")
-}
-
-[sub_resource type="AnimationRootNode" id="AnimationRootNode_hwi3p"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f5g4v"]
+load_path = "res://.godot/imported/spr_UI_crosshair.png-7ab9101b352e4bfbe84c1f5e118e2f03.ctex"
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "rotation_helper") groups=["Player"]]
 collision_mask = 35
@@ -144,7 +81,7 @@ offset_bottom = 492.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.0800003, 0.0800003)
-texture = ExtResource("4_jky7m")
+texture = SubResource("CompressedTexture2D_f5g4v")
 
 [node name="InteractText" type="Label" parent="CameraHolder/Camera3D/ImmediateUI"]
 layout_mode = 0
@@ -189,34 +126,6 @@ theme_override_font_sizes/font_size = 25
 text = "[Append]"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Toolbelt" type="Node3D" parent="CameraHolder/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
-visible = false
-
-[node name="ToolPlayer" type="AnimationPlayer" parent="CameraHolder/Camera3D/Toolbelt"]
-root_node = NodePath("../RightHand")
-libraries = {
-"": SubResource("AnimationLibrary_1xldh")
-}
-
-[node name="AnimationTree" type="AnimationTree" parent="CameraHolder/Camera3D/Toolbelt/ToolPlayer"]
-tree_root = SubResource("AnimationRootNode_hwi3p")
-anim_player = NodePath("..")
-
-[node name="RightHand" type="Node3D" parent="CameraHolder/Camera3D/Toolbelt"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.6, -1)
-
-[node name="Hatchet" parent="CameraHolder/Camera3D/Toolbelt/RightHand" instance=ExtResource("7_bfvat")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 0, 0)
-script = null
-
-[node name="LeftHand" type="Node3D" parent="CameraHolder/Camera3D/Toolbelt"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.6, -1)
-
-[node name="Hatchet" parent="CameraHolder/Camera3D/Toolbelt/LeftHand" instance=ExtResource("7_bfvat")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
-script = null
 
 [node name="Node3D" type="Node3D" parent="CameraHolder/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, -1)
