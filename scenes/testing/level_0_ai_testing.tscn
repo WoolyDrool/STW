@@ -41,31 +41,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0.5, 8)
 
 [node name="PathNode6" parent="AI Path" instance=ExtResource("3_admam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.5, 24)
-last = true
 
 [node name="PathNode7" parent="AI Path" instance=ExtResource("3_admam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.5, 24)
-last = true
 
 [node name="PathNode8" parent="AI Path" instance=ExtResource("3_admam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 4.5, 13)
-last = true
 
 [node name="PathNode9" parent="AI Path" instance=ExtResource("3_admam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4.5, -2)
-last = true
 
 [node name="PathNode10" parent="AI Path" instance=ExtResource("3_admam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 4.5, 18)
-last = true
 
 [node name="PathNode11" parent="AI Path" instance=ExtResource("3_admam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 4.5, 18)
-last = true
 
 [node name="PathNode12" parent="AI Path" instance=ExtResource("3_admam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0.5, -7)
-last = true
 
 [node name="PathNode13" parent="AI Path" instance=ExtResource("3_admam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0.5, -16)

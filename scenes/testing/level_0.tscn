@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ct5br2utftc1l"]
+[gd_scene load_steps=17 format=3 uid="uid://bg6mdd082dsdo"]
 
 [ext_resource type="PackedScene" uid="uid://buj0i2kl571cx" path="res://entities/player/player.tscn" id="2_lsily"]
 [ext_resource type="PackedScene" uid="uid://dbeitcqkgyxws" path="res://models/creatures/kour_working_file.tscn" id="3_rc1qt"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b2pycx4jyy83o" path="res://environment/giga_floor.tscn" id="6_b48e7"]
 [ext_resource type="PackedScene" uid="uid://dcqhohjnnnfhe" path="res://entities/items/knife.tscn" id="7_j0k3n"]
 [ext_resource type="PackedScene" uid="uid://m33fuptpqwhi" path="res://entities/items/dead_bird.tscn" id="8_afuge"]
-[ext_resource type="PackedScene" uid="uid://bjr4bsqpgmfxg" path="res://environment/queen/environment_initial_no_bake.tscn" id="8_xhqyq"]
+[ext_resource type="PackedScene" path="res://environment/queen/environment_initial_no_bake.tscn" id="8_xhqyq"]
 [ext_resource type="PackedScene" uid="uid://ugdhhtuebmi5" path="res://entities/interactables/shrines/queen_shrine.tscn" id="9_oxgml"]
 [ext_resource type="PackedScene" uid="uid://cvaqn5y4qlor8" path="res://environment/debug shapes/box.tscn" id="11_8snex"]
 [ext_resource type="PackedScene" uid="uid://cvyybvlsqnn61" path="res://environment/setpieces/Restroom.blend" id="12_cw3gp"]
