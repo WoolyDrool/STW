@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://duno81k1j5wuq"]
-
-[ext_resource type="Script" path="res://systems/TrailManager.gd" id="1_d8t4k"]
-
-[node name="TrailManager" type="Node"]
-script = ExtResource("1_d8t4k")

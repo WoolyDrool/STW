@@ -14,18 +14,7 @@ extends Node
 # List of published signals
 
 # ENTITIES ----
-signal E_O_COLLECT_TRASH
-signal E_O_COLLECT_RECYCLE
 
 # GAME ----
 # ---- UI
-signal G_UI_UPDATE_COUNTS
-# ---- MINIGAMES
-signal G_UI_MG_LOCK_START
-signal G_UI_MG_LOCK_END
-
-# TRAILS ---- 
-signal G_T_BEGIN_TRAIL
-signal G_T_END_TRAIL
-signal G_T_UPDATE_OBJECTIVE_COUNT(newCount)
 

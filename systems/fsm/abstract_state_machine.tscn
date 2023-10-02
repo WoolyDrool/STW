@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyfi811xyve8e"]
-
-[ext_resource type="Script" path="res://systems/fsm/abstract_state_machine.gd" id="1_h5pjb"]
-
-[node name="AbstractStateMachine" type="Node"]
-script = ExtResource("1_h5pjb")

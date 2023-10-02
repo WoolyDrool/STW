@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccyo3a8r1grlu"]
+
+[ext_resource type="Script" path="res://entities/ai/queen_ai.gd" id="1_303u4"]
+[ext_resource type="PackedScene" uid="uid://djb46p4eba641" path="res://models/creatures/vision_cones.tscn" id="2_iuau5"]
+[ext_resource type="PackedScene" uid="uid://dbeitcqkgyxws" path="res://models/creatures/kour_working_file.tscn" id="5_8m531"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_048qr"]
+size = Vector3(4, 8, 8)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wws5p"]
+points = PackedVector3Array(-5.96046e-08, -1, 1, -0.195184, -1, 0.980619, 0.194988, -1, 0.980619, -5.96046e-08, 1, 0, -0.382733, -1, 0.923845, 0.382537, -1, 0.923845, -0.707126, -1, 0.70693, -0.555599, -1, 0.831441, 0.555403, -1, 0.831441, 0.70693, -1, 0.70693, 0.831441, -1, 0.555403, 0.923845, -1, 0.382537, 0.980618, -1, 0.194988, 1, -1, 0, 0.980618, -1, -0.195184, 0.923845, -1, -0.382733, 0.831441, -1, -0.555599, 0.70693, -1, -0.707126, 0.555403, -1, -0.831637, 0.382537, -1, -0.924041, 0.194988, -1, -0.980814, -5.96046e-08, -1, -1, -0.195184, -1, -0.980814, -0.382733, -1, -0.924041, -0.555599, -1, -0.831637, -0.707126, -1, -0.707126, -0.831637, -1, -0.555599, -0.924041, -1, -0.382733, -0.980814, -1, -0.195184, -1, -1, 0, -0.980814, -1, 0.194988, -0.924041, -1, 0.382537, -0.831637, -1, 0.555403)
+
+[node name="QueenAI" type="CharacterBody3D" groups=["Enemy"]]
+script = ExtResource("1_303u4")
+can_move = true
+
+[node name="VisionTimer" type="Timer" parent="." groups=["Enemy"]]
+autostart = true
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." groups=["Enemy"]]
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(1, 0.701961, 0, 1)
+
+[node name="VisionRaycast" type="RayCast3D" parent="." groups=["Enemy"]]
+transform = Transform3D(1, 0, 0, 0, 0.976971, -0.213371, 0, 0.213371, 0.976971, 0, 7.44099, 4.32144)
+target_position = Vector3(0, 0, -100)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("BoxShape3D_048qr")
+
+[node name="KourWorkingFile" parent="." groups=["Enemy"] instance=ExtResource("5_8m531")]
+
+[node name="Vision" type="Area3D" parent="." groups=["Enemy"]]
+transform = Transform3D(1, -2.13163e-13, 0, -1.60777e-13, 0.707107, -0.707107, 1.00487e-14, 0.707107, 0.707107, 4.10306e-06, 7.73366, 5.45693)
+
+[node name="Cone" parent="Vision" groups=["Enemy"] instance=ExtResource("2_iuau5")]
+transform = Transform3D(-5, 4.29537e-06, -2.52094e-06, 7.54954e-07, -1.84792, -4.64599, -4.92294e-06, -4.64599, 1.84792, -1.54837e-06, 1.13827, 3.74892)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Vision" groups=["Enemy"]]
+transform = Transform3D(-5, 4.29537e-06, -2.52094e-06, 7.54954e-07, -1.84792, -4.64599, -4.92294e-06, -4.64599, 1.84792, -1.54837e-06, 1.13827, 3.74892)
+shape = SubResource("ConvexPolygonShape3D_wws5p")
+
+[connection signal="timeout" from="VisionTimer" to="." method="_on_vision_timer_timeout"]

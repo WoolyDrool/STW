@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ct5br2utftc1l"]
+[gd_scene load_steps=17 format=3 uid="uid://bg6mdd082dsdo"]
 
 [ext_resource type="PackedScene" uid="uid://buj0i2kl571cx" path="res://entities/player/player.tscn" id="2_lsily"]
 [ext_resource type="PackedScene" uid="uid://dbeitcqkgyxws" path="res://models/creatures/kour_working_file.tscn" id="3_rc1qt"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b2pycx4jyy83o" path="res://environment/giga_floor.tscn" id="6_b48e7"]
 [ext_resource type="PackedScene" uid="uid://dcqhohjnnnfhe" path="res://entities/items/knife.tscn" id="7_j0k3n"]
 [ext_resource type="PackedScene" uid="uid://m33fuptpqwhi" path="res://entities/items/dead_bird.tscn" id="8_afuge"]
-[ext_resource type="PackedScene" uid="uid://bjr4bsqpgmfxg" path="res://environment/queen/environment_initial_no_bake.tscn" id="8_xhqyq"]
+[ext_resource type="PackedScene" path="res://environment/queen/environment_initial_no_bake.tscn" id="8_xhqyq"]
 [ext_resource type="PackedScene" uid="uid://ugdhhtuebmi5" path="res://entities/interactables/shrines/queen_shrine.tscn" id="9_oxgml"]
 [ext_resource type="PackedScene" uid="uid://cvaqn5y4qlor8" path="res://environment/debug shapes/box.tscn" id="11_8snex"]
 [ext_resource type="PackedScene" uid="uid://cvyybvlsqnn61" path="res://environment/setpieces/Restroom.blend" id="12_cw3gp"]
@@ -21,12 +21,12 @@ ground_bottom_color = Color(0, 0, 0, 1)
 ground_horizon_color = Color(0.0666667, 0.172549, 0.392157, 1)
 ground_curve = 0.0313835
 
-[sub_resource type="Sky" id="Sky_m5p4p"]
+[sub_resource type="Sky" id="Sky_tdm0t"]
 sky_material = SubResource("ProceduralSkyMaterial_b7mdv")
 
 [sub_resource type="Environment" id="Environment_f5mwj"]
 background_mode = 2
-sky = SubResource("Sky_m5p4p")
+sky = SubResource("Sky_tdm0t")
 ambient_light_source = 3
 reflected_light_source = 2
 fog_enabled = true
@@ -43,7 +43,7 @@ points = PackedVector3Array(2.5, 2.5, 2.5, 2.5, 2.5, -2.5, -2.5, 2.5, 2.5, 2.5, 
 [node name="level0" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_lsily")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 132.709, 2.00557, 57.442)
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 10.1272, 4.66981, -27.2237)
 
 [node name="KourWorkingFile" parent="." instance=ExtResource("3_rc1qt")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.0853, 0, -35.9326)
