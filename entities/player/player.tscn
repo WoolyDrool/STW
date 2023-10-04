@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://buj0i2kl571cx"]
+[gd_scene load_steps=8 format=3 uid="uid://buj0i2kl571cx"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_m01v4"]
 [ext_resource type="Script" path="res://entities/player/player_camera.gd" id="2_ecwpp"]
-[ext_resource type="PackedScene" uid="uid://cfuum0m1fdiet" path="res://ui/main_ui.tscn" id="2_xevq3"]
 [ext_resource type="Script" path="res://entities/player/CameraHolder.gd" id="2_yuupq"]
 [ext_resource type="FontFile" uid="uid://d1o6kv64g121o" path="res://media/Fonts/coolvetica condensed rg.ttf" id="3_vr1kv"]
 [ext_resource type="Script" path="res://entities/player/player_inventory.gd" id="5_2148u"]
@@ -131,13 +130,6 @@ vertical_alignment = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, -1)
 
 [node name="Node3D" type="Node3D" parent="CameraHolder"]
-
-[node name="MainUI" parent="." instance=ExtResource("2_xevq3")]
-visible = false
-offset_left = 980.0
-offset_right = 980.0
-offset_bottom = 1080.0
-grow_vertical = 2
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("5_2148u")
