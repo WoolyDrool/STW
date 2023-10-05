@@ -10,6 +10,7 @@ data = PackedVector3Array(8, 0, 8, -8, 0, 8, 8, 0, -8, -8, 0, 8, -8, 0, -8, 8, 0
 mesh = SubResource("PlaneMesh_133t2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 34
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_vkkw4")
