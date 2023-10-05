@@ -17,30 +17,16 @@ func _ready():
 	interactLabel = $"ImmediateUI/InteractText"
 	modifierLabel = $"ImmediateUI/ModifierText"
 	appendLabel = $"ImmediateUI/AppendText"
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if raycaster.get_collider():
 		x = raycaster.get_collider()
 		
-		#if x.has_signal("S_GENERAL_INTERACT"):
-		#	canGet = true
-		#else:
-		#	canGet = false
-
 		if x.has_method("Interact"):
 			canGet = true
 		else:
 			canGet = false
-
-		#if x:
-		#	if x.get_children().has_node("Interact"):
-		#		
-		#		canGet = true
-		#	else:
-		#		canGet = false
 			
 		if canGet:
 			interactLabel.text = (x.interactText)
