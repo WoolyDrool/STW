@@ -16,5 +16,7 @@ extends Node
 # ENTITIES ----
 
 # GAME ----
+signal game_pause(state : bool)
+
 # ---- UI
 
