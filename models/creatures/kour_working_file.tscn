@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbeitcqkgyxws"]
+[gd_scene load_steps=3 format=3 uid="uid://dbeitcqkgyxws"]
 
 [ext_resource type="PackedScene" uid="uid://cpgdejxjfhkpn" path="res://models/creatures/KourWorkingFile.blend" id="1_b8dtu"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mcvny"]
+points = PackedVector3Array(-2.98023e-08, 0.3048, 0.3048, 0.0594324, 0.298893, 0.3048, -2.98023e-08, 0, -0.3048, -0.0594921, 0.298893, 0.3048, 0.116597, 0.281588, 0.3048, -0.281648, 0.116597, 0.3048, -0.253483, 0.169287, 0.3048, -0.215532, 0.215472, 0.3048, -0.169347, 0.253423, 0.3048, -0.116657, 0.281588, 0.3048, 0.169287, 0.253423, 0.3048, 0.215472, 0.215472, 0.3048, 0.253423, 0.169287, 0.3048, 0.281588, 0.116597, 0.3048, 0.298893, 0.0594324, 0.3048, 0.3048, 0, 0.3048, 0.298893, -0.0594921, 0.3048, 0.281588, -0.116657, 0.3048, 0.253423, -0.169347, 0.3048, 0.215472, -0.215532, 0.3048, 0.169287, -0.253483, 0.3048, 0.116597, -0.281648, 0.3048, 0.0594324, -0.298952, 0.3048, -2.98023e-08, -0.3048, 0.3048, -0.0594921, -0.298952, 0.3048, -0.116657, -0.281648, 0.3048, -0.169347, -0.253483, 0.3048, -0.215532, -0.215532, 0.3048, -0.253483, -0.169347, 0.3048, -0.281648, -0.116657, 0.3048, -0.298952, -0.0594921, 0.3048, -0.3048, 0, 0.3048, -0.298952, 0.0594324, 0.3048)
 
 [node name="KourWorkingFile" instance=ExtResource("1_b8dtu")]
 
@@ -84,3 +87,7 @@ visible = false
 
 [node name="Sword" parent="." index="3"]
 visible = false
+
+[node name="GenVision" type="CollisionShape3D" parent="." index="5"]
+transform = Transform3D(19.2687, 0, 0, 0, 19.2687, 0, 0, 0, 19.2687, -0.62457, 7.82014, 9.92375)
+shape = SubResource("ConvexPolygonShape3D_mcvny")
