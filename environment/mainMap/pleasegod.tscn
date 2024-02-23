@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6hg12qerwfcl"]
+
+[ext_resource type="PackedScene" uid="uid://dt1r172e6r204" path="res://environment/MainMapTesting.tscn" id="1_imo4y"]
+[ext_resource type="PackedScene" uid="uid://buj0i2kl571cx" path="res://entities/player/player.tscn" id="2_kg5ay"]
+
+[node name="pleasegod" type="Node2D"]
+
+[node name="EnvironmentRedone" parent="." instance=ExtResource("1_imo4y")]
+
+[node name="Player" parent="." instance=ExtResource("2_kg5ay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.09823, 0)
