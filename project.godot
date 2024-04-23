@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Stw Master Proejct"
 run/main_scene="res://scenes/testing/level_0.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://sprites/icon.svg"
 
 [autoload]

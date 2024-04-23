@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvf4oy6dfjksi"]
+
+[ext_resource type="PackedScene" uid="uid://cfg871d2ckots" path="res://environment/setpieces/Dock.blend" id="1_26rr1"]
+
+[node name="Dock" instance=ExtResource("1_26rr1")]

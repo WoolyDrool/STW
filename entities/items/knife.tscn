@@ -3,7 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://cirv2qr73tyah" path="res://entities/items/objective_piece.tscn" id="1_2nkug"]
 [ext_resource type="PackedScene" uid="uid://bvuql8br4s2n2" path="res://models/items/knife.tscn" id="2_2sv3x"]
 
-[node name="Knife" instance=ExtResource("1_2nkug")]
+[node name="knife" groups=["Items"] instance=ExtResource("1_2nkug")]
+itemName = "Knife"
+itemTypeMain = "Violence"
+itemSubtype = "Weapons"
 
 [node name="MeshInstance3D" parent="." index="1"]
 visible = false

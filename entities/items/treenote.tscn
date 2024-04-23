@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dj5gj8f72ogx7"]
+
+[ext_resource type="Script" path="res://entities/items/objective_piece.gd" id="1_eevy3"]
+[ext_resource type="PackedScene" uid="uid://pletdq3bfgxj" path="res://systems/interact.tscn" id="2_cd40s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ej0k"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ctbtc"]
+
+[node name="strangenote" type="Area3D"]
+disable_mode = 2
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_eevy3")
+itemName = "Strange Note"
+itemTypeMain = "Misc"
+itemSubtype = "None"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.285377, 0, 0, 0, 0.285377, 0, 0, 0, 0.285377, 0, 0, 0)
+shape = SubResource("BoxShape3D_7ej0k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.285377, 0, 0, 0, 0.285377, 0, 0, 0, 0.285377, 0, 0, 0)
+mesh = SubResource("SphereMesh_ctbtc")
+
+[node name="Interact" parent="." instance=ExtResource("2_cd40s")]
+methodName = "_on_grab"
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+can_sleep = false
+freeze_mode = 1

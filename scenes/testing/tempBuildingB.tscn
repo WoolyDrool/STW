@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://x2i5yl7acpps"]
+
+[ext_resource type="PackedScene" uid="uid://iev3kkn5iajx" path="res://environment/setpieces/building gothic.blend" id="1_mrqbx"]
+
+[node name="building gothic" instance=ExtResource("1_mrqbx")]

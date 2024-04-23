@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dg2i6vs6646m7"
-path="res://.godot/imported/MainLevel.blend-a347bd340fbba4be3a973f5998e8470f.scn"
+path="res://.godot/imported/MainLevel.blend-7756a802c988c6b297656d95b70bf2fb.scn"
 
 [deps]
 
-source_file="res://environment/queen/MainLevel.blend"
-dest_files=["res://.godot/imported/MainLevel.blend-a347bd340fbba4be3a973f5998e8470f.scn"]
+source_file="res://environment/mainMap/MainLevel.blend"
+dest_files=["res://.godot/imported/MainLevel.blend-7756a802c988c6b297656d95b70bf2fb.scn"]
 
 [params]
 
@@ -22,6 +22,7 @@ meshes/generate_lods=true
 meshes/create_shadow_meshes=true
 meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
@@ -29,6 +30,7 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={}
+gltf/naming_version=0
 gltf/embedded_image_handling=1
 blender/nodes/visible=0
 blender/nodes/punctual_lights=true

@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwteas3w72qpu"]
+
+[ext_resource type="Script" path="res://scenes/testing/GenerateItems.gd" id="1_45xgh"]
+[ext_resource type="Script" path="res://scenes/testing/ConcernDebug.gd" id="2_v8oqv"]
+
+[node name="ItemRandomizingDebug" type="Node2D"]
+
+[node name="ItemList" type="ItemList" parent="."]
+offset_left = 454.0
+offset_top = 29.0
+offset_right = 705.0
+offset_bottom = 406.0
+
+[node name="DebugOutput" type="RichTextLabel" parent="."]
+offset_left = 28.0
+offset_top = 85.0
+offset_right = 317.0
+offset_bottom = 125.0
+
+[node name="GenerateItems" type="Button" parent="."]
+offset_left = 187.0
+offset_top = 33.0
+offset_right = 382.0
+offset_bottom = 64.0
+text = "Generate Queen's Items
+"
+script = ExtResource("1_45xgh")
+
+[node name="UseAce" type="Button" parent="."]
+offset_left = 21.0
+offset_top = 288.0
+offset_right = 142.0
+offset_bottom = 319.0
+text = "Use Ace's Item"
+
+[node name="UseKing" type="Button" parent="."]
+offset_left = 19.0
+offset_top = 241.0
+offset_right = 146.0
+offset_bottom = 272.0
+text = "Use King's Item"
+
+[node name="UseJack" type="Button" parent="."]
+offset_left = 17.0
+offset_top = 198.0
+offset_right = 147.0
+offset_bottom = 229.0
+text = "Use Jack's Item"
+
+[node name="Concern" type="RichTextLabel" parent="."]
+offset_left = 137.0
+offset_top = 131.0
+offset_right = 242.0
+offset_bottom = 162.0
+text = "Placeholder"
+script = ExtResource("2_v8oqv")
+
+[connection signal="pressed" from="GenerateItems" to="GenerateItems" method="_on_pressed"]
+[connection signal="pressed" from="UseAce" to="Concern" method="_on_use_ace_pressed"]
+[connection signal="pressed" from="UseKing" to="Concern" method="_on_use_king_pressed"]
+[connection signal="pressed" from="UseJack" to="Concern" method="_on_use_jack_pressed"]

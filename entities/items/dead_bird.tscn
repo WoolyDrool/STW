@@ -3,7 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://cirv2qr73tyah" path="res://entities/items/objective_piece.tscn" id="1_nownw"]
 [ext_resource type="PackedScene" uid="uid://q8qq5xkylbrw" path="res://models/items/deadBird.blend" id="2_37vih"]
 
-[node name="DeadBird" instance=ExtResource("1_nownw")]
+[node name="DeadBird" groups=["Items"] instance=ExtResource("1_nownw")]
+itemName = "Dead Bird"
+itemTypeMain = "Violence"
+itemSubtype = "Flesh"
 
 [node name="CollisionShape3D" parent="." index="0"]
 visible = false

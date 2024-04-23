@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0fp74oco046k"]
+
+[ext_resource type="PackedScene" uid="uid://dttljncoipsyj" path="res://environment/setpieces/retro building.blend" id="1_wipk1"]
+
+[node name="retro building" instance=ExtResource("1_wipk1")]
+
+[node name="Sun" parent="." index="5"]
+visible = false
